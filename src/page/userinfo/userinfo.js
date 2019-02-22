@@ -104,11 +104,6 @@ $(function() {
   if("org.bigdata.framework.web.core.model.User@10f184e7"==null || "org.bigdata.framework.web.core.model.User@10f184e7"==""){
     window.location.href = "/indexing/index";
   }
-  $("#password1").val("123456");
-  $("#password2").val("123456");
-  $("#email").val("huizhenjin@126.com");
-  $("#telphone").val("13651391986");
-  $("#realnameReg").val("金");
   
   var height = $(window).height()-2-$(".header_wrap").height()-$(".logo_wrap").height()-$(".footer_wrap").height();
   $(".register_wrap").css("min-height",height);
@@ -290,6 +285,7 @@ function checkForms() {
   var telphone = $("#telphone").val();
   var email = $("#email").val();
   var realName = $("#realnameReg").val();
+  var code=$("#verCodeV").val();
   $("#loading").show()
   $.ajax({
     type : "post",
@@ -317,11 +313,13 @@ function checkForms() {
         alertFunction(res.Status);
         window.location.reload();
       } else {
-        
+        $("#loading").hide()
+        alertFunction(res.errorMsg);
       }
     }
   });
 }
+
 function initRightList(curr) {
   var pageSize = 10;
   $.ajax({
@@ -340,6 +338,15 @@ function initRightList(curr) {
             $(".overlay").show()
           }
           var result=res.data;
+          $("#userNameInfo").html(result.userName)
+          $("#password1").val(result.password);
+          $("#password1").val(result.password);
+          $("#password2").val(result.password);
+          $("#email").val(result.email);
+          $("#telphone").val(result.phoneNumber);
+          $("#realnameReg").val(result.realName);
+          //到底为止 加载个人信息
+          return 
           var feedbackHtml = '';
           for (var i = 0; i < result.length; i++) {
 

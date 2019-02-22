@@ -249,49 +249,52 @@ function saveReg() {
   }*/
   var flag =true;
   if (flag) {
-    $("#loading").show()
+      $("#loading").show()
       //先验证验证码是否正确
       //验证码验证
       var _telPhone=$("#telphoneReg").val();
       var _code=$("#verCodeV").val();
       var _sign=md5('appId=10001&code='+_code+'&mobile='+_telPhone+'&stime=123456'+_miyao)
+      // $.ajax({
+      //   type : "post",
+      //   url : "http://safety.kahntang.com/sms/checkCode?appId=10001&code="+_code+"&mobile="+_telPhone+"&stime=123456&sign="+_sign,
+      //   data : {},
+      //   dataType : "json",
+      //   success : function(res) {
+      //     if(res.code!='200'){
+      //       $("#loading").hide()
+      //       alertFunction(res.errorMsg)
+      //     }else{
+              
+      //     }
+      //   }
+      // })
+      //提交注册信息
       $.ajax({
         type : "post",
-        url : "http://safety.kahntang.com/sms/checkCode?appId=10001&code="+_code+"&mobile="+_telPhone+"&stime=123456&sign="+_sign,
-        data : {},
+        url : "http://safety.kahntang.com/user/register",
+        data : {
+          "userName" : $("#usernameReg").val().trim(),
+          "password" : md5($("#password1Reg").val().trim()),
+          "email" : $("#emailReg").val().trim(),
+          "phoneNumber" : $("#telphoneReg").val().trim(),
+          "realName" : $("#realNameReg").val().trim(),
+          "code" : $("#verCodeV").val().trim(),
+        },
         dataType : "json",
         success : function(res) {
-          if(res.code!='200'){
-            alertFunction(res.errorMsg)
-          }else{
-              //提交注册信息
-              $.ajax({
-                type : "post",
-                url : "http://safety.kahntang.com/user/register",
-                data : {
-                  "userName" : $("#usernameReg").val().trim(),
-                  "password" : md5($("#password1Reg").val().trim()),
-                  "email" : $("#emailReg").val().trim(),
-                  "phoneNumber" : $("#telphoneReg").val().trim(),
-                  "realName" : $("#realNameReg").val().trim(),
-                },
-                dataType : "json",
-                success : function(res) {
-                  $("#loading").hide()
-                  if (res.code == "200") {
-                    checkForms($("#usernameReg").val().trim(), $("#password1Reg").val().trim());
-                  } else {
-                    alertFunction("注册失败");
-                  }
-                },
-                error:function(){
-                  $("#loading").hide()
-                  alertFunction("服务器错误");
-                }
-            });
+          $("#loading").hide()
+          if (res.code == "200") {
+            checkForms($("#usernameReg").val().trim(), $("#password1Reg").val().trim());
+          } else {
+            alertFunction(res.errorMsg);
           }
         },
-      })
+        error:function(){
+          $("#loading").hide()
+          alertFunction("服务器错误");
+        }
+    });
   }
 }
 

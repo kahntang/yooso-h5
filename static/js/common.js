@@ -295,37 +295,38 @@ function saveBack() {
     var _telPhone=$("#back_username").val();
     var _code=$("#back_Yan").val();
     var _sign=md5('appId=10001&code='+_code+'&mobile='+_telPhone+'&stime=123456'+_miyao)
+    // $.ajax({
+    //     type : "post",
+    //     url : "http://safety.kahntang.com/sms/checkCode?appId=10001&code="+_code+"&mobile="+_telPhone+"&stime=123456&sign="+_sign,
+    //     data : {},
+    //     dataType : "json",
+    //     success : function(res) {
+    //         if(res.code!='200'){
+    //             alertFunction(res.errorMsg)
+    //         }else{
+                
+    //         }
+    //     }
+    // })
     $.ajax({
         type : "post",
-        url : "http://safety.kahntang.com/sms/checkCode?appId=10001&code="+_code+"&mobile="+_telPhone+"&stime=123456&sign="+_sign,
-        data : {},
+        url : "http://safety.kahntang.com/user/forget",
+        data : {
+            "mobile" : $('#back_username').val(),
+            "password" : $("#back_pwd").val().trim(),
+            "code" :$('#back_Yan').val(),
+        },
         dataType : "json",
         success : function(res) {
-            if(res.code!='200'){
-                alertFunction(res.errorMsg)
+            $("#loading").hide()
+            if(res.code!="200"){
+                alertFunction(res.errorMsg);
             }else{
-                $.ajax({
-                    type : "post",
-                    url : "http://safety.kahntang.com/user/forget",
-                    data : {
-                        "mobile" : $('#back_username').val(),
-                        "password" : $("#back_pwd").val().trim(),
-                        "code" :$('#back_Yan').val(),
-                    },
-                    dataType : "json",
-                    success : function(res) {
-                        $("#loading").hide()
-                        if(res.code!="200"){
-                            alertFunction(res.errorMsg);
-                        }else{
-                            alertFunction("修改成功");
-                            $(".overlay_find").hide();
-                        }
-                    } 
-                });
+                alertFunction("修改成功");
+                $(".overlay_find").hide();
             }
-        }
-    })
+        } 
+    });
     
 }
 
