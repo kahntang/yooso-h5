@@ -6,6 +6,7 @@ var accountName=localStorage.getItem('userName')
 var localphoneNumber=localStorage.getItem('phoneNumber')
 var verCode;	//验证码
 var countdown = 60;	//发送验证码倒计时
+var InforResult='' //用户个人信息
 //弹出层方法
 function alertFunction(msg){
   $("body #aleertText").html(msg)
@@ -65,17 +66,25 @@ $("#getVerCode").bind("click", function() {
   settime();
   getVerCode();
 });
+var _miyao='31e7d8d00616d9eeb2adcbb60c7ab708'
 function getVerCode(){
-  var telPhonese = localphoneNumber;
+  // var telPhonese = localphoneNumber;
+  var telPhonese=$("#telphone").val();
+  var _sign=md5('appId=10001&mobile='+telPhonese+'&stime=123456'+_miyao)
   $.ajax({
-    type : "get",
-    url : "/login/SendMd",
+    type : "post",
+    url : "http://safety.kahntang.com/sms/sendCode?appId=10001&mobile="+telPhonese+"&stime=123456&sign="+_sign,
     data : {
-      "telphone" : telPhonese
+      
     },
     dataType : "json",
     success : function(res) {
-        verCode = res;
+        // verCode = res;
+        if(res.code!='200'){
+          alertFunction(res.errorMsg)
+        }else{
+          settime();
+        }
     }
   });
 }
@@ -282,6 +291,12 @@ function checkForms() {
   //   return;
   // }
   var password = $("#password1").val().trim();
+  var _password=''
+  if(password!=InforResult.password){
+    _password=md5(password)
+  }else{
+    _password=password
+  }
   var telphone = $("#telphone").val();
   var email = $("#email").val();
   var realName = $("#realnameReg").val();
@@ -293,10 +308,11 @@ function checkForms() {
     data : {
       // "id" : $("#userId").val(),
       "userName":accountName,
-      "password" : password,
+      "password" : _password,
       "phoneNumber" : telphone,
       "email" : email,
       "realName" : realName,
+      "code":code,
       "token":token
     },
     dataType : "json",
@@ -310,8 +326,11 @@ function checkForms() {
         $("#realnameReg").attr("disabled","disabled");
         $("#verCodeV").attr("disabled","disabled");
         flagDisabled=0;
-        alertFunction(res.Status);
-        window.location.reload();
+        // alertFunction(res.Status);
+        alertFunction("操作成功")
+        setTimeout(function(){
+          window.location.reload();
+        },1000)
       } else {
         $("#loading").hide()
         alertFunction(res.errorMsg);
@@ -338,6 +357,7 @@ function initRightList(curr) {
             $(".overlay").show()
           }
           var result=res.data;
+          InforResult=result
           $("#userNameInfo").html(result.userName)
           $("#password1").val(result.password);
           $("#password1").val(result.password);

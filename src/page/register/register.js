@@ -285,7 +285,12 @@ function saveReg() {
         success : function(res) {
           $("#loading").hide()
           if (res.code == "200") {
-            checkForms($("#usernameReg").val().trim(), $("#password1Reg").val().trim());
+            setTimeout(function(){
+              // alertFunction('注册成功，正在登录');
+              checkForms($("#usernameReg").val().trim(), $("#password1Reg").val().trim());
+            },500)
+            
+            
           } else {
             alertFunction(res.errorMsg);
           }
@@ -301,7 +306,7 @@ function saveReg() {
 /*登录*/
 function checkForms(account, password) {
   $.ajax({
-    type : "get",
+    type : "post",
     url : "http://safety.kahntang.com/user/login",
     data : {
       "userName" : account,
