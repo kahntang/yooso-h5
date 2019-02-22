@@ -47,7 +47,7 @@ function getData(page){
   var _labelId=localStorage.getItem('canvasKey')
   $.ajax({
     type : "post",
-    url : "http://safety.kahntang.com/search/adv?keyword="+searchText+"&pageNo="+page+"&style=SUMMARY&highlight=true&menuId=0&pageSize=10",
+    url : "http://safety.kahntang.com/search/adv?keyword="+searchText+"&pageNo="+page+"&style=SUMMARY&highlight=true&menuId=0&pageSize=10&labelId="+_labelId,
     data : {},
     dataType : "json",
     success : function(res) {
@@ -59,7 +59,15 @@ function getData(page){
           var resResult=res.data.values
           var rightHtml=''
           for(var i=0;i<resResult.length;i++){
-            var ahtml='<a href="/detail.html?repoId='+resResult[i].id+'" target="_blank">'+resResult[i].title+'</a>'
+            if(resResult[i].menu.id==16){
+                // 多媒体
+                var ahtml='<a href="/mediaDetail.html?id='+resResult[i].id+'" target="_blank">'+resResult[i].title+'</a>'
+            }else if(resResult[i].menu.id==16){
+                // 文件
+                var ahtml='<a href="/mediaDetail.html?repoId='+resResult[i].id+'" target="_blank">'+resResult[i].title+'</a>'
+            }else{
+                var ahtml='<a href="/details.html?repoId='+resResult[i].id+'" target="_blank">'+resResult[i].title+'</a>'
+            }
             var aContent=resResult[i].content
             if(!aContent){
                 aContent=''

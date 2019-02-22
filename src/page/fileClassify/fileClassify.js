@@ -196,9 +196,10 @@ function getSearchData(page){
   }
   $("#loading").show()
   var searchText=$("#searchText").val()
+  var _labelId=localStorage.getItem('canvasKey')
   $.ajax({
     type : "post",
-    url : "http://safety.kahntang.com/search/adv?menuId="+getQueryVariable('menuId')+"&pageSize=10&pageNo="+page+"&keyword="+searchText+"&style=SUMMARY&highlight=true",
+    url : "http://safety.kahntang.com/search/adv?menuId="+getQueryVariable('menuId')+"&pageSize=10&pageNo="+page+"&keyword="+searchText+"&style=SUMMARY&highlight=true&labelId"+_labelId,
     data : {},
     dataType : "json",
     success : function(res) {

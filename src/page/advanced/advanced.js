@@ -80,7 +80,7 @@ function getAdvancedSearch(curr,queryString) {
       var str=''
       var resultData=res.data.values
       for(var ii=0;ii<resultData.length;ii++){
-        str+='<div class="SearchPage_Three"><div class="ToolUse_Right_List"><h1><a href="/detail.html?repoId='+resultData[ii].id
+        str+='<div class="SearchPage_Three"><div class="ToolUse_Right_List"><h1><a href="/details.html?id='+resultData[ii].id
         +'">'+resultData[ii].title+'</a><u>&nbsp;&nbsp;[工具的安全使用]</u></h1><p>'+resultData[ii].content+'</p></div></div>'
       }
       // if(res.data!=null && res.noClassType!=""){

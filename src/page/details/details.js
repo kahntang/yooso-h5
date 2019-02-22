@@ -166,7 +166,7 @@ function chartsRender(data) {
             }
             graph.nodes.push(_node1)
             var _link1 = {
-                id: String(p + 1),
+                id: String(p),
                 lineStyle: {normal: {}},
                 name: '',
                 source: String(p + 1),
@@ -232,12 +232,15 @@ function chartsRender(data) {
                             repodId: _linkIntitle[l].id
                         }
                         graph.nodes.push(_node3)
+                        
+                        let laiyuanLength=data.length+q+1
+                        console.log(laiyuanLength,'222')
                         var _link3 = {
                             id: String(_linkLength3),
                             lineStyle: {normal: {}},
                             name: '',
                             source: String(_length3),
-                            target: String(_target3)
+                            target: String(laiyuanLength)
                         }
                         graph.links.push(_link3)
                     }
@@ -315,6 +318,7 @@ function chartsRender(data) {
             }
         }
     });
+    console.log(graph,'222')
     var option = {
         title: {
             text: '',
