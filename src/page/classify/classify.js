@@ -169,13 +169,26 @@ function getHotData(){
                     }else{
                         _hotHtml+='<li class="search_tab_li">'
                     }
-                    _hotHtml+='<div class="tab_li_num">'+(j+1)+'</div>'+
+                    if(res.data[j][3]==9){
+                        //文件
+                        _hotHtml+='<div class="tab_li_num">'+(j+1)+'</div>'+
+                                '<div class="tab_li_text"><a target="_blank" href="'+StaticUrl+res.data[j][2]+'" id="'+res.data[j][0]+'">'+res.data[j][1]+'</a>'
+                    }else if(res.data[j][3]==16){
+                        // 多媒体
+                        _hotHtml+='<div class="tab_li_num">'+(j+1)+'</div>'+
+                                '<div class="tab_li_text"><a target="_blank" href="/mediaDetail.html?id='+res.data[j][0]+'" id="'+res.data[j][0]+'">'+res.data[j][1]+'</a>'
+                    }else{
+                        _hotHtml+='<div class="tab_li_num">'+(j+1)+'</div>'+
                                 '<div class="tab_li_text"><a class="gotoDetail" repoId="'+res.data[j][0]+'">'+res.data[j][1]+'</a>'
+                    }
+                    
                     if(j<3){
                         if(!res.data[j][2]){
                             res.data[j][2]=''
+                        }else{
+                            _hotHtml+='<p>'+res.data[j][2]+'</p>'
                         }
-                        _hotHtml+='<p>'+res.data[j][2]+'</p>'
+                        
                         // _hotHtml+='<p>WellWatcher Flux 多区域油藏监测系统能...</p>'
                     }
                     _hotHtml+='</div>'+'</li>'

@@ -229,7 +229,8 @@ function chartsRender(data) {
                             name: _linkIntitle[l].title,
                             symbolSize: 10,
                             value: 10,
-                            repodId: _linkIntitle[l].id
+                            repodId: _linkIntitle[l].id,
+                            meneType:_linkIntitle[l].menu.id
                         }
                         graph.nodes.push(_node3)
                         
@@ -356,7 +357,14 @@ function chartsRender(data) {
         console.log(param, 'param')
         if (param.data.attributes.modularity_class == 3) {
             //进行详情跳转
-            window.open("/details.html?repoId=" + param.data.repodId);
+            if(param.data.meneType==9){
+                // 处理文件
+            }else if(param.data.meneType==16){
+                window.open("/mediaDetail.html?id=" + param.data.repodId);
+            }else{
+                window.open("/details.html?repoId=" + param.data.repodId);
+            }
+        
         }
     });
 }

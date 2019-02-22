@@ -83,7 +83,18 @@ function getMenuList(labelId) {
                     var childHtml = ''
                     for (var childI = 0; childI < fenleidata[conI].childs.length; childI++) {
                         if (childI < 3) {
-                            childHtml += ' <li class="" menuLiId=' + fenleidata[conI].childs[childI].id + ' menuId=' + fenleidata[conI].id + ' menutype=' + fenleidata[conI].menuType + '><a class="gotoDetail" menuurl=' + fenleidata[conI].menuUrl + ' repoid="' + fenleidata[conI].childs[childI].id + '" menutype=' + fenleidata[conI].menuType + '>' + fenleidata[conI].childs[childI].menuName + '</a></li>'
+                            if(fenleidata[conI].menuType==3){
+                                childHtml+=' <li class="" menuLiId='+fenleidata[conI].childs[childI].id+' menuId='+fenleidata[conI].id+' menutype='+fenleidata[conI].menuType+'>'+
+                                          '<a class="" target="_blank" href="'+fenleidata[conI].childs[childI].menuUrl+'" menuurl='+fenleidata[conI].menuUrl+' repoid="'+fenleidata[conI].childs[childI].id+'" menutype='+fenleidata[conI].menuType+
+                                          '>'+fenleidata[conI].childs[childI].menuName+'</a></li>'
+                              }else{
+                                childHtml+=' <li class="" menuLiId='+fenleidata[conI].childs[childI].id+' menuId='+fenleidata[conI].id+' menutype='+fenleidata[conI].menuType+'>'+
+                                  '<a class="gotoDetail" menuurl='+fenleidata[conI].menuUrl+' repoid="'+fenleidata[conI].childs[childI].id+'" menutype='+fenleidata[conI].menuType+
+                                  '>'+fenleidata[conI].childs[childI].menuName+'</a></li>'
+                              }
+                            // childHtml += ' <li class="" menuLiId=' + fenleidata[conI].childs[childI].id + ' menuId=' + fenleidata[conI].id + ' menutype=' + fenleidata[conI].menuType + 
+                            //                 '><a class="gotoDetail" menuurl=' + fenleidata[conI].menuUrl + ' repoid="' + fenleidata[conI].childs[childI].id + 
+                            //                 '" menutype=' + fenleidata[conI].menuType + '>' + fenleidata[conI].childs[childI].menuName + '</a></li>'
                         }
                     }
                     oneConternHtml += ' <div class="one-content left"><div class="content-title gotoClassify" menuId=' + fenleidata[conI].id + ' menutype=' + fenleidata[conI].menuType + '>' + fenleidata[conI].menuName +
