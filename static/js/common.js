@@ -313,7 +313,7 @@ function saveBack() {
         url : "http://safety.kahntang.com/user/forget",
         data : {
             "mobile" : $('#back_username').val(),
-            "password" : $("#back_pwd").val().trim(),
+            "password" : md5($("#back_pwd").val().trim()),
             "code" :$('#back_Yan').val(),
         },
         dataType : "json",
