@@ -409,7 +409,7 @@ function outEdit() {
       window.location.href = "/index.html";
     },
     error : function(xhr, status, error) {
-
+      $("#loading").hide()
     }
   });
 }

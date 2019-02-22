@@ -283,7 +283,11 @@ function saveReg() {
                   } else {
                     alertFunction("注册失败");
                   }
-                } 
+                },
+                error:function(){
+                  $("#loading").hide()
+                  alertFunction("服务器错误");
+                }
             });
           }
         },
@@ -297,7 +301,7 @@ function checkForms(account, password) {
     type : "get",
     url : "http://safety.kahntang.com/user/login",
     data : {
-      "username" : account,
+      "userName" : account,
       "password" : md5(password)
     },
     dataType : "json",
@@ -309,7 +313,7 @@ function checkForms(account, password) {
         window.location.href = "./index.html";
         // alert("注册成功！");
       } else {
-        alertFunction("注册失败！");
+        alertFunction("登录失败！");
       }
     }
   });
