@@ -62,14 +62,14 @@ function getData(page){
             if(resResult[i].menu.id==16){
                 // 多媒体
                 var ahtml='<a href="/mediaDetail.html?id='+resResult[i].id+'" target="_blank">'+resResult[i].title+'</a>'
-            }else if(resResult[i].menu.id==16){
+            }else if(resResult[i].menu.id==9){
                 // 文件
-                var ahtml='<a href="/mediaDetail.html?repoId='+resResult[i].id+'" target="_blank">'+resResult[i].title+'</a>'
+                var ahtml='<a  href="'+StaticUrl+resResult[i].content+'" target="_blank">'+resResult[i].title+'</a>'
             }else{
                 var ahtml='<a href="/details.html?repoId='+resResult[i].id+'" target="_blank">'+resResult[i].title+'</a>'
             }
             var aContent=resResult[i].content
-            if(!aContent){
+            if(!aContent||resResult[i].menu.id==9||resResult[i].menu.id==16){
                 aContent=''
             }
             rightHtml+='<div class="ToolUse_Right_List"><h1>'+ahtml+'<u>&nbsp;&nbsp;['+resResult[i].menu.menuName+']</u></h1><p>'+aContent+'</p></div>'
