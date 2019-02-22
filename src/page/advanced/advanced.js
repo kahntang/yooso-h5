@@ -1,6 +1,8 @@
 // //js只有两行代码，在body中加一句话
 require('./../../../static/css/style.css')
 require('./advanced.less')
+var commonConfig=require('./../../../static/js/common.js').commonConfig
+var StaticUrl=commonConfig.StaticUrl
 //弹出层方法
 function alertFunction(msg){
   $("body #aleertText").html(msg)
@@ -80,8 +82,17 @@ function getAdvancedSearch(curr,queryString) {
       var str=''
       var resultData=res.data.values
       for(var ii=0;ii<resultData.length;ii++){
-        str+='<div class="SearchPage_Three"><div class="ToolUse_Right_List"><h1><a href="/details.html?id='+resultData[ii].id
-        +'">'+resultData[ii].title+'</a><u>&nbsp;&nbsp;[工具的安全使用]</u></h1><p>'+resultData[ii].content+'</p></div></div>'
+        if(resultData[ii].menu.id==16){
+          str+='<div class="SearchPage_Three"><div class="ToolUse_Right_List"><h1><a target="_blank" href="/mediaDetail.html?id='+resultData[ii].id
+        +'">'+resultData[ii].title+'</a><u>&nbsp;&nbsp;['+resultData[ii].menu.menuName+']</u></h1></div></div>'
+        }else if(resultData[ii].menu.id==9){
+          str+='<div class="SearchPage_Three"><div class="ToolUse_Right_List"><h1><a target="_blank" href="'+StaticUrl+resultData[ii].content
+        +'">'+resultData[ii].title+'</a><u>&nbsp;&nbsp;['+resultData[ii].menu.menuName+']</u></h1></div></div>'
+        }else{
+          str+='<div class="SearchPage_Three"><div class="ToolUse_Right_List"><h1><a  target="_blank" href="/details.html?repoId='+resultData[ii].id
+        +'">'+resultData[ii].title+'</a><u>&nbsp;&nbsp;['+resultData[ii].menu.menuName+']</u></h1><p>'+resultData[ii].content+'</p></div></div>'
+        }
+        
       }
       // if(res.data!=null && res.noClassType!=""){
       //   $("#noClassType").html(res.noClassType);
@@ -150,7 +161,7 @@ function addSearchCondition(nameType){
                                         +'<div class="info2">';
                                         html+=selHtml;
                                         html+='</div>'
-                                        +'<div class="info3"><input placeholder="" type="text"></div>'
+                                        +'<div class="info3"><input placeholder="" autocomplete="off" type="text"></div>'
                                         +'<div class="info4">'
                                         +'<select name="selectType">'
                                         +'<option>模糊</option>'
@@ -205,7 +216,7 @@ function getConfig(){
                       '<div class="condition_info info"><div class="info1"><span><a href="javascript:void(0);" class="addSearchCondition"  typename="config'+i+'"><i class="info_icon"></i></a>'+
                       '<a href="javascript:void(0);" class="removeSearchCondtition" typename="config'+i+'"><i class="info_icon icon_reduce"></i></a></span></div>'+
                       '<div class="info2"><select name="selField" id="selField">'+conChildsHtml+'</select>'+
-                      '</div><div class="info3"><input placeholder="" type="text"></div><div class="info4"><select name="selectType"><option>模糊</option>'+
+                      '</div><div class="info3"><input placeholder="" autocomplete="off" type="text"></div><div class="info4"><select name="selectType"><option>模糊</option>'+
                       '<option>精确</option></select></div></div></div></div></div>'
       }
       $("#dynamicDiv").html(contentHtml)
