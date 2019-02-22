@@ -1,0 +1,383 @@
+#index-page{
+  width: 100%;
+  height: 100%;
+  background: #f1f1f1;
+  // overflow: auto;
+}
+.index-content{
+  max-width: 1300px;
+  min-width: 480px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 30px 0 30px;
+  padding-bottom:30px;
+  overflow: hidden;
+}
+.one-content{
+  width: 20%;
+  margin-left: 5%;
+  background: #fff;
+  border:1px solid #dfdfdf;
+  margin-top:20px;
+  height: 180px;
+  box-sizing: border-box;
+  border-radius: 2px;
+}
+.one-content:hover{
+  border:2px solid #e98d46;
+}
+.content-title{
+  width: 100%;
+  padding-left:10px;
+  box-sizing: border-box;
+  height: 50px;
+  line-height: 50px;
+  position: relative;
+  text-align: left;
+  background: #f6f6f6;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.title_dian{
+  position: absolute;
+  right:0;
+  top:0;
+  z-index:1;
+  width:0;
+  height:0;
+  border-width: 30px 0 0 50px;
+  border-style:solid;
+  border-color: transparent;
+}
+.dian_dian{
+  position:absolute;
+  right: 3px;
+  top:0;
+  z-index:20;
+  font-size: 14px;
+  color:#cf1d24;
+  line-height: 1;
+  cursor: pointer;
+}
+.one-content:hover .dian_dian{
+  color:#fff;
+}
+.classiSeach .one-content:hover .dian_dian{
+  color: #cf1d24;
+}
+.content-body{
+  width: 100%;
+}
+.content-body ul{
+  width: 100%;
+  padding:10px;
+  box-sizing: border-box;
+}
+.content-body ul li{
+  width: 100%;
+  // height: 40px;
+  font-size: 14px;
+  line-height: 1.4;
+  color:#666;
+  list-style-type:none;
+  text-align: left;
+  cursor: pointer;
+}
+.content-body ul li a{
+  color:#666;
+  text-align: left;
+  text-decoration: none;
+}
+.content-body ul li:hover,.content-body ul li:hover a{
+  // color:#e98d46;
+}
+.index-banner{
+  // width: 100%;
+  // // background: #fff;
+  // padding: 0 60px 0 184px;
+  // box-sizing: border-box;
+  // overflow: hidden;
+}
+.logo{
+  float: left;
+  padding-top: 19px;
+  padding-left: 2px;
+}
+.logo h1{
+  margin:0;
+}
+.logo h1 img{
+  height:40px;
+}
+.search_box{
+  float: left;
+  padding-top: 23px;
+  margin-left: 60px;
+  width: 400px;
+  white-space: normal;
+}
+.search_hd{
+  // border: 1px solid #ce1820;
+  position: relative;
+  width: 350px;
+  overflow: hidden;
+}
+.search_input_box{
+  width: 100%;
+  height: 42px;
+  position: relative;
+  background: #fff;
+  border: 1px solid #ce1820;
+  box-sizing: border-box;
+}
+.search_select{
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  border: 0 none;
+  outline: none;
+  height: 41px;
+  position: absolute;
+  left:0;
+  top:0;
+  line-height: 41px;
+  padding-left: 10px;
+  padding-right: 15px;
+  background: url(http://safety.yooso.com.cn/resources/images/select_arrow.png) no-repeat 114px 17px;
+}
+.search_line{
+  color: #cacaca;
+  position: absolute;
+  left: 132px;
+  top: 11px;
+}
+.search_input{
+  display: block;
+  width: 60%;
+  height: 39px;
+  line-height: 39px;
+  padding-left: 10px;
+  float:left;
+  box-sizing: border-box;
+}
+.search_input input{
+  width: 100%;
+  height: 96%;
+  line-height: 39px;
+  border: 0 none;
+  outline: none;
+}
+.search_btn{
+  position: absolute;
+  right: 82px;
+  top: -1px;
+  z-index: 600;
+  text-align: center;
+  width: 82px;
+  height: 42px;
+  line-height: 42px
+}
+.search_btn a{
+  display: inline-block;
+  background: #ce1820;
+  color: #fff;
+  border: 0 none;
+  width: 100%;
+  height: 100%;
+}
+.icon_largeSearch{
+  width: 18px;
+  height: 18px;
+  background-position: -100px -80px;
+  margin-right: 3px;
+}
+.gj_search_btn{
+  position: absolute;
+  right: 0;
+  z-index: 222;
+  width: 82px;
+  top: -1px;
+  text-align: center;
+  height: 42px;
+  line-height: 42px;
+}
+.gj_search_btn a{
+  display: inline-block;
+  background: #e98d46;
+  color: #fff;
+  border: 0 none;
+  width: 100%;
+  height: 100%;
+}
+.login-btn{
+  float: left;
+  margin-top: 23px;
+  border:1px solid #ce1820;
+  overflow: hidden;
+  outline: none;
+  margin-left:80px;
+}
+.btn-login{
+  width: 100px;
+  height: 39px;
+  background: #fff;
+  border-radius:0;
+  float: left;
+  outline: none;
+  border:none;
+}
+.btn-resigter{
+  width: 100px;
+  height: 39px;
+  background: #ce1820;
+  color:#fff;
+  border-radius:0;
+  float: left;
+  border:none;
+}
+.btn-resigter:focus{
+  outline: none;
+}
+.title-body{
+  width: 80%;
+  height: 339px;
+  margin: 0 auto;
+  // overflow: hidden;
+}
+.title-swiper{
+  width: 50%;
+  padding-left: 13%;
+  padding-top: 60px;
+  box-sizing: border-box;
+  float: left;
+  height: 100%;
+  position: relative;
+  color:#fff;
+}
+.swiper-name{
+  // color:#fff;
+  width: 100%;
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: left;
+  // padding-left: 40px;
+  box-sizing: border-box;
+}
+.swiper-text{
+  line-height:1.4;
+  width:100%;
+  padding:0 50px;
+  box-sizing:border-box;
+  text-align:left;
+}
+.icon-fontLeft{
+  position:absolute;
+  left:170px;
+  top:50%;
+  font-size: 20px;
+  margin-top:-10px;
+  z-index:10;
+}
+.icon-fontRight{
+  position:absolute;
+  right:15px;
+  top:50%;
+  font-size: 20px;
+  margin-top:-10px;
+  z-index:10;
+}
+.new-swiper{
+  width: 80%;
+  font-size: 14px;
+}
+
+.title-canvas{
+  width: 522px;
+  float: left;
+  height: 298px;
+  position: relative;
+  background:url(../../../static/img/indexBcLine.png) no-repeat;
+  background-size:100%;
+}
+.one-canvas{
+  width:70px;
+  height:70px;
+  border-radius:50%;
+  background:#fff;
+  text-align:center;
+  position:absolute;
+  z-index:10;
+  img{
+    width:20px;
+    height:20px;
+    margin:0;
+    margin-top:10px;
+  }
+  p{
+    width:100%;
+    color:#e98d46;
+    margin:0;
+    padding:0;
+    line-height:1;
+    margin-top:10px;
+    font-size:12px;
+  }
+}
+.moreCanvas{
+  color:#fff;
+  position:absolute;
+  right:-30px;
+  bottom:8px;
+  z-index:10;
+  cursor:pointer;
+}
+.one-canvas0{
+  left:0;
+  bottom:90px;
+}
+.one-canvas1{
+  left:90px;
+  top:66px;
+}
+.one-canvas2{
+  left:137px;
+  bottom:5px;
+}
+.one-canvas3{
+  left:245px;
+  bottom:150px;
+}
+.one-canvas4{
+  left:250px;
+  bottom:35px;
+}
+.one-canvas5{
+  top:-5px;
+  left:290px;
+}
+.one-canvas6{
+  right:60px;
+  top:40px;
+}
+.one-canvas7{
+  right:30px;
+  bottom:90px;
+}
+.one-canvas8{
+  right:80px;
+  bottom:15px;
+}
+.modal-body{
+  overflow: hidden;
+}
+.classiSeach{
+  width: 1000px;
+}
+.classiSeach .content-body ul li{
+  line-height: 30px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

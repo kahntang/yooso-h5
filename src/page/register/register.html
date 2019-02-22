@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>石油安全事故应急解决方案知识服务平台</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="register-page">
+        <!-- 公共头部begin -->
+        <div class="header_wrap">
+            <div class="container">
+                <div class="left">
+                    <a href="http://www.petropub.com" target="_blank">石油社官网</a>
+                </div>
+                <ul class="mid">
+                    <li class="line">|</li>
+                    <li><a href="http://store.yooso.com.cn" target="_blank">中油书店</a></li>
+                    <li class="list"><a href="javascript:void(0)">石油知识库</a>
+                        <ul>
+                            <li><a href="http://zuanjing.yooso.com.cn" target="_blank">钻井知识库</a></li>
+                            <li><a href="http://kantan.yooso.com.cn" target="_blank">勘探知识库</a></li>
+                        </ul>
+                    </li>
+                    <script type="text/javascript">
+                        $(function() {
+                            $('.header_wrap li.list').mouseover(function() {
+                                $(".header_wrap li ul").show();
+                            });
+                            $('.header_wrap li ').mouseout(function() {
+                                $('.header_wrap li ul').hide();
+                            });
+                            $(document).click(function() {
+                                $(".header_wrap li ul").hide();
+                            });
+                            $('.header_wrap li.list').click(function(e) {
+                                $(".header_wrap li ul").show();
+                                e.stopPropagation();
+                            });
+                        });
+                    </script>
+                    <li><a href="http://baike.yooso.com.cn/index.action" target="_blank">石油百科</a>
+                    </li>
+                    <li><a href="http://bz.yooso.com.cn/" target="_blank">石油标准</a></li>
+                    <li><a href="http://www.petroj.cn" target="_blank">石油期刊</a></li>
+                    <li><a href="http://fanyi.yooso.com.cn/translation.action" target="_blank">石油翻译</a></li>
+                    <li><a href="http://nydjt.yooso.com.cn" target="_blank">能源大讲坛</a></li>
+                    <li class="line">|</li>
+                </ul>
+                <div class="left u_mid_left">
+                    <a href="http://www.yooso.com.cn" target="_blank">油搜<i class="icon icon_smallSearch"></i>YOOSO</a>
+                </div>
+                <div class="user_box">
+                    <ul id="LoginUl">
+                        <li class="user_btn">
+                            <a id="goUserInfo">欢迎您：<span id="loginuserName"></span></a>
+                        </li>
+                        <li class="line">|</li>
+                        <li class="exit_btn">
+                            <a href="javascript:void(0)">退出</a>
+                        </li>
+                    </ul>
+                    <script type="text/javascript">
+                        $(function() {
+                            $('.user_box>div').mouseover(function() {
+                                $('.menu_list').show();
+                            });
+                            $('.menu_list').mouseout(function() {
+                                $('.menu_list').hide();
+                            });
+                            $(document).click(function() {
+                                $('.menu_list').hide();
+                            });
+                            $('.user_box>div').click(function(e) {
+                                $('.menu_list').show();
+                                e.stopPropagation();
+                            });
+                        });
+                    </script>
+                </div>
+            </div>
+        </div>
+        <!-- 公共头部end -->
+        <div class="index-title">
+            <!-- <img src="../../../static/img/backgroud.png" class="img-bc" /> -->
+            <div class="index-banner">
+                <!--logo开始-->
+                <div class="logo">
+                    <h1>
+                        <a href="/index.html"><img src="../../../static/img/index_logo1.png" alt=""></a>
+                    </h1>
+                </div>
+                <!--搜索开始-->
+                <div class="search_box">
+                    <form action="javascript:void();">
+                        <div class="search_hd">
+                            <div class="search_input_box">
+                                <div class="search_input">
+                                    <input id="searchText" type="text" placeholder="请输入搜索内容">
+                                </div>
+                            </div>
+                            <div class="search_btn">
+                                <a id="gotoSearchList"><i class="glyphicon glyphicon-search"></i></a>
+                            </div>
+                            <div class="gj_search_btn">
+                                <a href="../advanced.html">高级搜索</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="login-btn" id="loginBtns">
+                    <button type="button" id="loginbtn" class=" btn-login" data-target=".bs-example-modal-lg">登录</button>
+                    <button type="button" class="goRegister btn-resigter" id="goRegister">注册</button>
+                </div>
+            </div>
+        </div>
+        <!-- 内容 -->
+        <div class="register_wrap" style="min-height: 493px;">
+            <div class="container">
+                <div class="register">
+                    <div class="title">
+                        <em>欢迎注册</em>
+                    </div>
+                    <div class="required">
+                        <span>*</span>为必填项
+                    </div>
+                    <div class="list">
+                        <dl>
+                            <dt>
+                                <span>*</span>用户名：
+                            </dt>
+                            <dd>
+                                <input autocomplete="off" type="text" name="" id="usernameReg" value="" placeholder="请输入用户名">
+                            </dd>
+                            <dd class="tip" id="usernameRegTip" style="display: none;">
+                                <div class="tip_box">
+                                    <div>
+                                        <i></i><span class="msg">长度为4-16位字符</span>
+                                    </div>
+                                    <div>
+                                        <i></i><span class="msg">仅支持英文小写、数字</span>
+                                    </div>
+                                    <div>
+                                        <i></i><span class="msg">不能仅含数字</span>
+                                    </div>
+                                </div>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>
+                                <span>*</span>密码：
+                            </dt>
+                            <dd>
+                                <input type="password" name="" id="password1Reg" value="" placeholder="请设置密码">
+                            </dd>
+                            <dd class="tip" id="password1TipReg" style="display: none;">密码不能为空，不能有空格</dd>
+                        </dl>
+                        <dl>
+                            <dt>
+                                <span>*</span>确认密码：
+                            </dt>
+                            <dd>
+                                <input type="password" name="" id="password2Reg" value="" placeholder="请再次确认密码">
+                            </dd>
+                            <dd class="tip" id="password2TipReg" style="display: none;">确认密码不能为空</dd>
+                        </dl>
+                        <dl>
+                            <dt>
+                                <span>*</span>电子邮箱：
+                            </dt>
+                            <dd>
+                                <input autocomplete="off" type="email" name="" id="emailReg" value="" placeholder="请输入您的常用邮箱">
+                            </dd>
+                            <dd class="tip" id="emailRegTip" style="display: none;">请输入正确电子邮箱</dd>
+                        </dl>
+                        <dl>
+                            <dt>
+                                <span>*</span>真实姓名：
+                            </dt>
+                            <dd>
+                                <input autocomplete="off" type="text" name="" id="realNameReg" value="" placeholder="请输入您的真实姓名">
+                            </dd>
+                            <dd class="tip" id="realNameRegTip" style="display: none;">请输入真实姓名</dd>
+                        </dl>
+                        <dl>
+                            <dt>
+                                <span>*</span>手机号：
+                            </dt>
+                            <dd>
+                                <input autocomplete="off" type="text" name="" id="telphoneReg" value="" placeholder="请输入您的手机号">
+                            </dd>
+                            <dd class="tip" id="telphoneTipReg" style="display: none;">请输入正确手机号</dd>
+                        </dl>
+                        <!-- <dl>
+                            <dt>
+                                <span>*</span>图片验证码：
+                            </dt>
+                            <dd>
+                                <input autocomplete="off" type="text" name="" placeholder="请输入图片验证码" id="verifyCode"  value="" style="width: 160px;">
+                            </dd>
+                            <dd>
+                                
+                            </dd>
+                            <dd class="tip" id="verifyCodeReg" style="display: none;">图片验证码不正确</dd>
+                        </dl> -->
+                        <dl>
+                            <dt>
+                                <span>*</span>手机验证码：
+                            </dt>
+                            <dd>
+                                <input autocomplete="off" type="text" name="" placeholder="请输入验证码" id="verCodeV" value="" style="width: 160px;">
+                            </dd>
+                            <dd>
+                                <input type="button" name="" id="getVerCode" value="获取验证码" style="margin-left: 10px; width: 95px; height: 40px;padding-left:0;">
+                            </dd>
+                            <dd class="tip" id="yanTip" style="display: none;">请输入短信验证码</dd>
+                        </dl>
+                        <dl>
+                            <dt></dt>
+                            <dd class="submit">
+                                <input type="button" id="registerSaveReg" value="提交">
+                            </dd>
+                            <dd class="reset">
+                                <input type="button" name="" id="registerReset" id="reset" value="重置">
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- footer -->
+        <div class="index-footer">
+            Copyright © 2018 石油工业出版社 All Rights Reserved
+        </div>
+        <div class="overlay" style="display:none;">
+            <div class="login">
+                <div class="close">
+                    <a href="javascript:void(0)" class="glyphicon glyphicon-remove" id="closePsw1"></a>
+                </div>
+                <div class="loginTitle">
+                    <span>会员登录</span>
+                </div>
+                <div class="con">
+                    <dl>
+                        <dt>用户名：</dt>
+                        <dd>
+                            <input type="text" name="username" id="username" placeholder="请输入用户名" style="width:299px">
+                        </dd>
+                    </dl>
+                    <dl class="Password">
+                        <dt>密码：</dt>
+                        <dd>
+                            <div style="width: 299px;text-align:left; border: 1px solid #DFDFDF;">
+                                <input type="password" id="password" name="password" placeholder="请输入密码" style="border: 0 none; width: 70%;">
+                            </div>
+                            <a id="find_password" class="find_password">找回密码</a>
+                        </dd>
+                    </dl>
+                    <dl class="Remember">
+                        <dt></dt>
+                        <dd>
+                            <input type="checkbox" id="checkbox">记住用户名
+                        </dd>
+                        <dd class="Register">
+                            <a class="goRegister">用户注册</a>
+                        </dd>
+                    </dl>
+                    <dl class="loginBtn">
+                        <dt></dt>
+                        <dd>
+                            <input type="button" value="登录" id="signUpIn">
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+            <!--找回密码开始-->
+            <div id="back" class="overlay_find back" style="display: none;">
+                <div class="login_find">
+                    <div class="close">
+                        <a href="javascript:void(0)" class="glyphicon glyphicon-remove" id="closePsw"></a>
+                    </div>
+                    <div class="title">
+                        <span>找回密码</span>
+                    </div>
+                    <div class="con">
+                        <dl>
+                            <dt>手机号：</dt>
+                            <dd>
+                                <input id="back_username" type="text" placeholder="请输入手机号">
+                            </dd>
+                            <dd class="back_tip" id="back_usernameTip" style="margin-bottom: 6px; display: none;">手机号不存在</dd>
+                        </dl>
+                        <dl class="Password">
+                            <dt>新密码：</dt>
+                            <dd>
+                                <input id="back_pwd" type="password" placeholder="请输入新密码">
+                            </dd>
+                            <dd class="back_tip" id="back_pwdTip" style="margin-bottom: 6px; display: block;">密码不能为空，不能有空格</dd>
+                        </dl>
+                        <dl class="Password">
+                            <dt>确认密码：</dt>
+                            <dd>
+                                <input id="back_pwd2" type="password" placeholder="请再次确认新密码">
+                            </dd>
+                            <dd class="back_tip" id="back_pwd2Tip" style="margin-bottom: 6px; display: none;">两次密码不一样</dd>
+                        </dl>
+                        <dl class="phoneNum">
+                            <dt>验证码：</dt>
+                            <dd>
+                                <input id="back_Yan" type="text" placeholder="请输入手机验证码" style="width: 174px;">
+                            </dd>
+                            <dd>
+                                <a id="back_getVerCode" href="javascript:void(0)">获取手机验证码</a>
+                            </dd>
+                            <dd class="back_tip" id="back_YanTip" style="margin-bottom: 6px; display: none;">请输入正确验证码</dd>
+                        </dl>
+                        <dl class="loginBtn">
+                            <dt></dt>
+                            <dd>
+                                <input type="button" id="subPswBtn" value="提交">
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 反馈 -->
+        <div class="skin">
+            <div class="skin_Feedback">
+                <a href="javascript:void(0)" id="fankuiBtn"><i class="icon icon_Feedback"></i><br>反馈</a>
+                <!--反馈弹框-->
+                <div class="FeedbackBox">
+                    <div class="FeedbackTitle">
+                        反 馈
+                        <a href="javascript:void(0)" class="BtnClose"><img src="http://safety.yooso.com.cn/resources/images/btn-close.png"></a>
+                    </div>
+                    <div class="FeedbackCon">
+                        <dl>
+                            <dt>您的姓名</dt>
+                            <dd>
+                                <input placeholder="请填写姓名" readonly="readonly" id="fankuiInput" value="jinhuizhen" id="feedUsername" type="text">
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>联系方式</dt>
+                            <dd>
+                                <input autocomplete="off" placeholder="请填写电话或邮箱" id="feedTelphone" type="text">
+                            </dd>
+                        </dl>
+                        <dl class="message">
+                            <!--<dt>您的留言</dt><br>-->
+                            <dd style="width: 96%;height: 100%;">
+                                <textarea autocomplete="off" id="feedContent" placeholder="请填写您的意见"></textarea>
+                            </dd>
+                        </dl>
+                        <dl class="FeedbackBtn">
+                            <dt></dt>
+                            <dd>
+                                <input id="subFankuiBtn" value="提    交" type="button">
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+            <div class="skin_Back_to_top">
+                <a class="Back_to_top" id="gotoTop"><img src="../../../static/img/huojian.png" class="icon icon_Back_to_top"></img><br>返回</a>
+            </div>
+        </div>
+    </div>
+    <div id="loading">
+        <img src="../../../static/img/loading.svg" alt="">
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+</body>
+
+</html>
