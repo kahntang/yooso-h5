@@ -70,10 +70,11 @@ var _miyao='31e7d8d00616d9eeb2adcbb60c7ab708'
 function getVerCode(){
   // var telPhonese = localphoneNumber;
   var telPhonese=$("#telphone").val();
-  var _sign=md5('appId=10001&mobile='+telPhonese+'&stime=123456'+_miyao)
+  var _stime=new Date().getTime();
+  var _sign=md5('appId=10001&mobile='+telPhonese+'&stime='+_stime+_miyao)
   $.ajax({
     type : "post",
-    url : "http://safety.kahntang.com/sms/sendCode?appId=10001&mobile="+telPhonese+"&stime=123456&sign="+_sign,
+    url : "http://safety.kahntang.com/sms/sendCode?appId=10001&mobile="+telPhonese+"&stime="+_stime+"&sign="+_sign,
     data : {
       
     },

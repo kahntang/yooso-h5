@@ -70,10 +70,11 @@ $("#getVerCode").bind("click", function() {
     //发送验证码
     //生成密钥
     var _telPhone=$("#telphoneReg").val();
-    var _sign=md5('appId=10001&mobile='+_telPhone+'&stime=123456'+_miyao)
+    var _stime=new Date().getTime();
+    var _sign=md5('appId=10001&mobile='+_telPhone+'&stime='+_stime+_miyao)
     $.ajax({
       type : "post",
-      url : "http://safety.kahntang.com/sms/sendCode?appId=10001&mobile="+_telPhone+"&stime=123456&sign="+_sign,
+      url : "http://safety.kahntang.com/sms/sendCode?appId=10001&mobile="+_telPhone+"&stime="+_stime+"&sign="+_sign,
       data : {},
       dataType : "json",
       success : function(res) {
@@ -254,10 +255,11 @@ function saveReg() {
       //验证码验证
       var _telPhone=$("#telphoneReg").val();
       var _code=$("#verCodeV").val();
-      var _sign=md5('appId=10001&code='+_code+'&mobile='+_telPhone+'&stime=123456'+_miyao)
+      var _stime=new Date().getTime();
+      var _sign=md5('appId=10001&code='+_code+'&mobile='+_telPhone+'&stime='+_stime+_miyao)
       // $.ajax({
       //   type : "post",
-      //   url : "http://safety.kahntang.com/sms/checkCode?appId=10001&code="+_code+"&mobile="+_telPhone+"&stime=123456&sign="+_sign,
+      //   url : "http://safety.kahntang.com/sms/checkCode?appId=10001&code="+_code+"&mobile="+_telPhone+"&stime="+_stime+"&sign="+_sign,
       //   data : {},
       //   dataType : "json",
       //   success : function(res) {
