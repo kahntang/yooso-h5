@@ -234,8 +234,11 @@ function chartsRender(data) {
                             content:_linkIntitle[l].content
                         }
                         graph.nodes.push(_node3)
-                        
                         let laiyuanLength=data.length+q+1
+                        for(var _rr=0;_rr<r;_rr++){
+                            laiyuanLength+=data[_rr].repos.length
+                        }
+                        
                         console.log(laiyuanLength,'222')
                         var _link3 = {
                             id: String(_linkLength3),
