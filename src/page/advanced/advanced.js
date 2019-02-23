@@ -3,6 +3,10 @@ require('./../../../static/css/style.css')
 require('./advanced.less')
 var commonConfig=require('./../../../static/js/common.js').commonConfig
 var StaticUrl=commonConfig.StaticUrl
+var _labelId=localStorage.getItem('canvasKey')
+if(!_labelId){
+  location.href="/index.html"
+}
 //弹出层方法
 function alertFunction(msg){
   $("body #aleertText").html(msg)
@@ -70,7 +74,6 @@ function getAdvancedSearch(curr,queryString) {
   }
   var pageSize = 10;
   $("#loading").show()
-  var _labelId=localStorage.getItem('canvasKey')
   $.ajax({
     type : "post",
     url : "http://safety.kahntang.com/search/adv?"+queryString+"style=SUMMARY&highlight=true&pageNo="+curr+"&pageSize=10&labelId="+_labelId,
