@@ -230,7 +230,8 @@ function chartsRender(data) {
                             symbolSize: 10,
                             value: 10,
                             repodId: _linkIntitle[l].id,
-                            meneType:_linkIntitle[l].menu.id
+                            meneType:_linkIntitle[l].menu.id,
+                            content:_linkIntitle[l].content
                         }
                         graph.nodes.push(_node3)
                         
@@ -359,6 +360,7 @@ function chartsRender(data) {
             //进行详情跳转
             if(param.data.meneType==9){
                 // 处理文件
+                window.open(StaticUrl+param.data.content)
             }else if(param.data.meneType==16){
                 window.open("/mediaDetail.html?id=" + param.data.repodId);
             }else{
