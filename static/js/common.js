@@ -367,6 +367,9 @@ function checkForm() {
             $(".overlay").hide();
             $("#LoginUl").html("");
             var LoginUl = '';
+            if(!account){
+              account=''
+            }
             LoginUl += '<li class="user_btn">';
             LoginUl += '<a href="/login/UserInfo">欢迎您：<span>'
                 + account + '</span></a>';
