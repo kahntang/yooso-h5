@@ -412,9 +412,9 @@ function outEdit() {
     success : function(data) {
       $("#loading").hide()
       // localStorage.clear()
-      localStorage.setItem('token',null)
-      localStorage.setItem('userName',null)
-      localStorage.setItem('phoneNumber',null)//缓存手机号
+      localStorage.setItem('token','')
+      localStorage.setItem('userName','')
+      localStorage.setItem('phoneNumber','')//缓存手机号
       window.location.href = "/index.html";
     },
     error : function(xhr, status, error) {
