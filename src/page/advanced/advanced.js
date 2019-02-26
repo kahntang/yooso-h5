@@ -213,7 +213,6 @@ function getConfig(){
                 conChildsHtml+='<option value="'+confChilds[j].id+'">'+confChilds[j].menuName+'</option>'
             }
           }
-          
         }
         contentHtml+='<div class="conTool" menuId="'+configValue[i].id+'" id="config'+i+'"><div class="title">'+configValue[i].menuName+'</div><div class="condition" name="config'+i+'_condition_div">'+
                       '<div class="condition_info info"><div class="info1"><span><a href="javascript:void(0);" class="addSearchCondition"  typename="config'+i+'"><i class="info_icon"></i></a>'+

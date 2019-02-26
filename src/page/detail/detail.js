@@ -37,7 +37,7 @@ function getDetail(){
     success : function(res) {
       $("#loading").hide()
       if (res.code == "200") {
-        getOtherData()//请求其他库相关资源
+        getOtherData()//请求相关知识图谱
         var fenleidata=res.data
         var oneConternHtml='<div class="ShareDetailsBlock ShareDetailsBlockAnother"><div class="left"><a><img style="width: 347px;height: 260px;" src="'+StaticUrl+fenleidata.url+'">'+'</a></div><div class="right">'+
                       '<h1><a>'+fenleidata.title+'</a></h1><dl>'+fenleidata.whpDesc+'</dl></div></div>'
@@ -127,7 +127,7 @@ function getOtherData(){
               }
               _otherSmallData+='<div class="ClassicCaseCon"><a href="/detail.html?repoId='+otherShareData[oi].data[ii].id+'" target="_blank">'+otherShareData[oi].data[ii].title+'</a><p>'+_iscontNull+'</p></div>'
             }
-            otherShareHtml+='<div class="ClassicCase" style=""><div class="big-title"><span>其他库相关资源</span></div><div class="title">'+
+            otherShareHtml+='<div class="ClassicCase" style=""><div class="big-title"><span>相关知识图谱</span></div><div class="title">'+
                               otherShareData[oi].data[0].menu.menuName+'</div><div class="ClassicCaseBlock">'+_otherSmallData+'</div></div>'
           }else{
             for(var ii=0;ii<otherShareData[oi].data.length;ii++){

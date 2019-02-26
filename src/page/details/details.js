@@ -43,7 +43,7 @@ function getDetail() {
         success: function (res) {
             $("#loading").hide()
             if (res.code == "200") {
-                getOtherData()//请求其他库相关资源
+                getOtherData()//请求相关知识图谱
                 var fenleidata = res.data
                 var oneConternHtml = '<div class="ShareDetailsBlock ShareDetailsBlockAnother"><div class="left"><a><img style="width: 347px;height: 260px;" src="' + StaticUrl + fenleidata.url + '">' + '</a></div><div class="right">' +
                     '<h1><a>' + fenleidata.title + '</a></h1><dl>' + fenleidata.whpDesc + '</dl></div></div>'
