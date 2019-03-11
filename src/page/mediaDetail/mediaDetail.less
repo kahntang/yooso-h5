@@ -2,33 +2,127 @@
  laypage默认样式
 */
 
-.laypage_main{font-size:14px; font-family:"微软雅黑","宋体"; clear:both; color:#666;}
-.laypage_main *{display:inline-block; *display:inline; *zoom:1; vertical-align: middle; font-size:14px; font-family:"微软雅黑","宋体";}
-.laypage_main a{height:26px; line-height:26px; text-decoration:none; color:#666;font-size:14px; font-family:"微软雅黑","宋体";}
-.laypage_main a, .laypage_main span{margin:0 3px 6px; padding:0 8px;}
-.laypage_main span{height:26px; line-height:26px;}
+.laypage_main {
+	font-size: 14px;
+	font-family: "微软雅黑", "宋体";
+	clear: both;
+	color: #666;
+}
+
+.laypage_main * {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	vertical-align: middle;
+	font-size: 14px;
+	font-family: "微软雅黑", "宋体";
+}
+
+.laypage_main a {
+	height: 26px;
+	line-height: 26px;
+	text-decoration: none;
+	color: #666;
+	font-size: 14px;
+	font-family: "微软雅黑", "宋体";
+}
+
+.laypage_main a,
+.laypage_main span {
+	margin: 0 3px 6px;
+	padding: 0 8px;
+}
+
+.laypage_main span {
+	height: 26px;
+	line-height: 26px;
+}
+
 /* .laypage_main input, .laypage_main button{ border:1px solid #ccc; background-color:#fff;} */
-.laypage_main input{width:40px; height:22px; line-height:22px; margin:0 5px; padding:0 5px;}
-.laypage_main button{height:26px; line-height:23px; margin-left:5px; padding:0 10px; color:#666;border:1px solid #999;border-radius:2px;-webkit-border-radius:2px;-moz-border-radius:2px;-o-border-radius:2px;}
-.laypage_main button:hover{background:#f96c3e;color:#fff;border:1px solid #f96c3e;border-radius:2px;-webkit-border-radius:2px;-moz-border-radius:2px;-o-border-radius:2px;} 
+.laypage_main input {
+	width: 40px;
+	height: 22px;
+	line-height: 22px;
+	margin: 0 5px;
+	padding: 0 5px;
+}
+
+.laypage_main button {
+	height: 26px;
+	line-height: 23px;
+	margin-left: 5px;
+	padding: 0 10px;
+	color: #666;
+	border: 1px solid #999;
+	border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	-o-border-radius: 2px;
+}
+
+.laypage_main button:hover {
+	background: #f96c3e;
+	color: #fff;
+	border: 1px solid #f96c3e;
+	border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	-o-border-radius: 2px;
+}
+
 /* 默认皮肤 */
 /* .laypageskin_default a{border:1px solid #ccc; background-color:#fff;} */
-.laypageskin_default span{height:28px; line-height:28px; color:#999; }
-.laypageskin_default .laypage_curr{color:#f96c3e;}
+.laypageskin_default span {
+	height: 28px;
+	line-height: 28px;
+	color: #999;
+}
+
+.laypageskin_default .laypage_curr {
+	color: #f96c3e;
+}
 
 /* 墨绿 */
-.laypageskin_molv a, .laypageskin_molv span{padding:0 12px; border-radius:2px;}
-.laypageskin_molv a{ background-color:#f1eff0; }
-.laypageskin_molv .laypage_curr{background-color:#315BCD; color:#fff;}
+.laypageskin_molv a,
+.laypageskin_molv span {
+	padding: 0 12px;
+	border-radius: 2px;
+}
+
+.laypageskin_molv a {
+	background-color: #f1eff0;
+}
+
+.laypageskin_molv .laypage_curr {
+	background-color: #315BCD;
+	color: #fff;
+}
 
 /* 雅黑 */
-.laypageskin_yahei{color:#333}
-.laypageskin_yahei a, .laypageskin_yahei span{padding:0 13px; border-radius:2px; color:#333}
-.laypageskin_yahei .laypage_curr{background-color:#333; color:#fff;}
+.laypageskin_yahei {
+	color: #333
+}
+
+.laypageskin_yahei a,
+.laypageskin_yahei span {
+	padding: 0 13px;
+	border-radius: 2px;
+	color: #333
+}
+
+.laypageskin_yahei .laypage_curr {
+	background-color: #333;
+	color: #fff;
+}
 
 /* 一般用于信息流加载 */
-.laypageskin_flow{text-align:center;}
-.laypageskin_flow .page_nomore{color:#999}
+.laypageskin_flow {
+	text-align: center;
+}
+
+.laypageskin_flow .page_nomore {
+	color: #999
+}
 
 /*首页*/
 
@@ -43,7 +137,8 @@
 	position: relative;
 }
 
-.SlideTab:before,.SlideTab:after {
+.SlideTab:before,
+.SlideTab:after {
 	content: '';
 	display: block;
 	clear: both;
@@ -61,10 +156,14 @@
 	width: 64%;
 	// background: url(../images/icon-gray.png) no-repeat left center;
 	/*cursor: pointer;*/
-	filter:alpha(opacity=50); /* IE */  
-	-moz-opacity:0; /* 老版Mozilla */  
-	-khtml-opacity:0; /* 老版Safari */  
-	opacity: 0; /* 支持opacity的浏览器*/
+	filter: alpha(opacity=50);
+	/* IE */
+	-moz-opacity: 0;
+	/* 老版Mozilla */
+	-khtml-opacity: 0;
+	/* 老版Safari */
+	opacity: 0;
+	/* 支持opacity的浏览器*/
 }
 
 .navs li.one {
@@ -134,405 +233,624 @@
 @keyframes FadeInRight0 {
 	0% {
 		right: -5px;
-		filter:alpha(opacity=0); /* IE */  
-		-moz-opacity:0; /* 老版Mozilla */  
-		-khtml-opacity:0; /* 老版Safari */  
-		opacity: 0; /* 支持opacity的浏览器*/
+		filter: alpha(opacity=0);
+		/* IE */
+		-moz-opacity: 0;
+		/* 老版Mozilla */
+		-khtml-opacity: 0;
+		/* 老版Safari */
+		opacity: 0;
+		/* 支持opacity的浏览器*/
 	}
+
 	100% {
 		right: 160px;
-		filter:alpha(opacity=1); /* IE */  
-		-moz-opacity:1; /* 老版Mozilla */  
-		-khtml-opacity:1; /* 老版Safari */  
-		opacity: 1; /* 支持opacity的浏览器*/
+		filter: alpha(opacity=1);
+		/* IE */
+		-moz-opacity: 1;
+		/* 老版Mozilla */
+		-khtml-opacity: 1;
+		/* 老版Safari */
+		opacity: 1;
+		/* 支持opacity的浏览器*/
 	}
 }
 
 @keyframes FadeInRight1 {
 	0% {
 		right: -5px;
-		filter:alpha(opacity=0); /* IE */  
-		-moz-opacity:0; /* 老版Mozilla */  
-		-khtml-opacity:0; /* 老版Safari */  
-		opacity: 0; /* 支持opacity的浏览器*/
+		filter: alpha(opacity=0);
+		/* IE */
+		-moz-opacity: 0;
+		/* 老版Mozilla */
+		-khtml-opacity: 0;
+		/* 老版Safari */
+		opacity: 0;
+		/* 支持opacity的浏览器*/
 	}
+
 	100% {
 		right: 55px;
-		filter:alpha(opacity=1); /* IE */  
-		-moz-opacity:1; /* 老版Mozilla */  
-		-khtml-opacity:1; /* 老版Safari */  
-		opacity: 1; /* 支持opacity的浏览器*/
+		filter: alpha(opacity=1);
+		/* IE */
+		-moz-opacity: 1;
+		/* 老版Mozilla */
+		-khtml-opacity: 1;
+		/* 老版Safari */
+		opacity: 1;
+		/* 支持opacity的浏览器*/
 	}
 }
 
 @keyframes FadeInRight2 {
 	0% {
 		right: -5px;
-		filter:alpha(opacity=0); /* IE */  
-		-moz-opacity:0; /* 老版Mozilla */  
-		-khtml-opacity:0; /* 老版Safari */  
-		opacity: 0; /* 支持opacity的浏览器*/
+		filter: alpha(opacity=0);
+		/* IE */
+		-moz-opacity: 0;
+		/* 老版Mozilla */
+		-khtml-opacity: 0;
+		/* 老版Safari */
+		opacity: 0;
+		/* 支持opacity的浏览器*/
 	}
+
 	100% {
 		right: 10px;
-		filter:alpha(opacity=1); /* IE */  
-		-moz-opacity:1; /* 老版Mozilla */  
-		-khtml-opacity:1; /* 老版Safari */  
-		opacity: 1; /* 支持opacity的浏览器*/
+		filter: alpha(opacity=1);
+		/* IE */
+		-moz-opacity: 1;
+		/* 老版Mozilla */
+		-khtml-opacity: 1;
+		/* 老版Safari */
+		opacity: 1;
+		/* 支持opacity的浏览器*/
 	}
 }
 
 @keyframes FadeInRight3 {
 	0% {
 		right: -5px;
-		filter:alpha(opacity=0); /* IE */  
-		-moz-opacity:0; /* 老版Mozilla */  
-		-khtml-opacity:0; /* 老版Safari */  
-		opacity: 0; /* 支持opacity的浏览器*/
+		filter: alpha(opacity=0);
+		/* IE */
+		-moz-opacity: 0;
+		/* 老版Mozilla */
+		-khtml-opacity: 0;
+		/* 老版Safari */
+		opacity: 0;
+		/* 支持opacity的浏览器*/
 	}
+
 	100% {
 		right: 5px;
-		filter:alpha(opacity=1); /* IE */  
-		-moz-opacity:1; /* 老版Mozilla */  
-		-khtml-opacity:1; /* 老版Safari */  
-		opacity: 1; /* 支持opacity的浏览器*/
+		filter: alpha(opacity=1);
+		/* IE */
+		-moz-opacity: 1;
+		/* 老版Mozilla */
+		-khtml-opacity: 1;
+		/* 老版Safari */
+		opacity: 1;
+		/* 支持opacity的浏览器*/
 	}
 }
 
 @keyframes FadeInRight4 {
 	0% {
 		right: -5px;
-		filter:alpha(opacity=0); /* IE */  
-		-moz-opacity:0; /* 老版Mozilla */  
-		-khtml-opacity:0; /* 老版Safari */  
-		opacity: 0; /* 支持opacity的浏览器*/
+		filter: alpha(opacity=0);
+		/* IE */
+		-moz-opacity: 0;
+		/* 老版Mozilla */
+		-khtml-opacity: 0;
+		/* 老版Safari */
+		opacity: 0;
+		/* 支持opacity的浏览器*/
 	}
+
 	100% {
 		right: 45px;
-		filter:alpha(opacity=1); /* IE */  
-		-moz-opacity:1; /* 老版Mozilla */  
-		-khtml-opacity:1; /* 老版Safari */  
-		opacity: 1; /* 支持opacity的浏览器*/
+		filter: alpha(opacity=1);
+		/* IE */
+		-moz-opacity: 1;
+		/* 老版Mozilla */
+		-khtml-opacity: 1;
+		/* 老版Safari */
+		opacity: 1;
+		/* 支持opacity的浏览器*/
 	}
 }
 
 @keyframes FadeInRight5 {
 	0% {
 		right: -5px;
-		filter:alpha(opacity=0); /* IE */  
-		-moz-opacity:0; /* 老版Mozilla */  
-		-khtml-opacity:0; /* 老版Safari */  
-		opacity: 0; /* 支持opacity的浏览器*/
+		filter: alpha(opacity=0);
+		/* IE */
+		-moz-opacity: 0;
+		/* 老版Mozilla */
+		-khtml-opacity: 0;
+		/* 老版Safari */
+		opacity: 0;
+		/* 支持opacity的浏览器*/
 	}
+
 	100% {
 		right: 160px;
-		filter:alpha(opacity=1); /* IE */  
-		-moz-opacity:1; /* 老版Mozilla */  
-		-khtml-opacity:1; /* 老版Safari */  
-		opacity: 1; /* 支持opacity的浏览器*/
+		filter: alpha(opacity=1);
+		/* IE */
+		-moz-opacity: 1;
+		/* 老版Mozilla */
+		-khtml-opacity: 1;
+		/* 老版Safari */
+		opacity: 1;
+		/* 支持opacity的浏览器*/
 	}
 }
+
 @-webkit-keyframes FadeInRight0 {
 	0% {
 		right: -5px;
-		filter:alpha(opacity=0); /* IE */  
-		-moz-opacity:0; /* 老版Mozilla */  
-		-khtml-opacity:0; /* 老版Safari */  
-		opacity: 0; /* 支持opacity的浏览器*/
+		filter: alpha(opacity=0);
+		/* IE */
+		-moz-opacity: 0;
+		/* 老版Mozilla */
+		-khtml-opacity: 0;
+		/* 老版Safari */
+		opacity: 0;
+		/* 支持opacity的浏览器*/
 	}
+
 	100% {
 		right: 160px;
-		filter:alpha(opacity=1); /* IE */  
-		-moz-opacity:1; /* 老版Mozilla */  
-		-khtml-opacity:1; /* 老版Safari */  
-		opacity: 1; /* 支持opacity的浏览器*/
+		filter: alpha(opacity=1);
+		/* IE */
+		-moz-opacity: 1;
+		/* 老版Mozilla */
+		-khtml-opacity: 1;
+		/* 老版Safari */
+		opacity: 1;
+		/* 支持opacity的浏览器*/
 	}
 }
 
 @-webkit-keyframes FadeInRight1 {
 	0% {
 		right: -5px;
-		filter:alpha(opacity=0); /* IE */  
-		-moz-opacity:0; /* 老版Mozilla */  
-		-khtml-opacity:0; /* 老版Safari */  
-		opacity: 0; /* 支持opacity的浏览器*/
+		filter: alpha(opacity=0);
+		/* IE */
+		-moz-opacity: 0;
+		/* 老版Mozilla */
+		-khtml-opacity: 0;
+		/* 老版Safari */
+		opacity: 0;
+		/* 支持opacity的浏览器*/
 	}
+
 	100% {
 		right: 55px;
-		filter:alpha(opacity=1); /* IE */  
-		-moz-opacity:1; /* 老版Mozilla */  
-		-khtml-opacity:1; /* 老版Safari */  
-		opacity: 1; /* 支持opacity的浏览器*/
+		filter: alpha(opacity=1);
+		/* IE */
+		-moz-opacity: 1;
+		/* 老版Mozilla */
+		-khtml-opacity: 1;
+		/* 老版Safari */
+		opacity: 1;
+		/* 支持opacity的浏览器*/
 	}
 }
 
 @-webkit-keyframes FadeInRight2 {
 	0% {
 		right: -5px;
-		filter:alpha(opacity=0); /* IE */  
-		-moz-opacity:0; /* 老版Mozilla */  
-		-khtml-opacity:0; /* 老版Safari */  
-		opacity: 0; /* 支持opacity的浏览器*/
+		filter: alpha(opacity=0);
+		/* IE */
+		-moz-opacity: 0;
+		/* 老版Mozilla */
+		-khtml-opacity: 0;
+		/* 老版Safari */
+		opacity: 0;
+		/* 支持opacity的浏览器*/
 	}
+
 	100% {
 		right: 10px;
-		filter:alpha(opacity=1); /* IE */  
-		-moz-opacity:1; /* 老版Mozilla */  
-		-khtml-opacity:1; /* 老版Safari */  
-		opacity: 1; /* 支持opacity的浏览器*/
+		filter: alpha(opacity=1);
+		/* IE */
+		-moz-opacity: 1;
+		/* 老版Mozilla */
+		-khtml-opacity: 1;
+		/* 老版Safari */
+		opacity: 1;
+		/* 支持opacity的浏览器*/
 	}
 }
 
 @-webkit-keyframes FadeInRight3 {
 	0% {
 		right: -5px;
-		filter:alpha(opacity=0); /* IE */  
-		-moz-opacity:0; /* 老版Mozilla */  
-		-khtml-opacity:0; /* 老版Safari */  
-		opacity: 0; /* 支持opacity的浏览器*/
+		filter: alpha(opacity=0);
+		/* IE */
+		-moz-opacity: 0;
+		/* 老版Mozilla */
+		-khtml-opacity: 0;
+		/* 老版Safari */
+		opacity: 0;
+		/* 支持opacity的浏览器*/
 	}
+
 	100% {
 		right: 5px;
-		filter:alpha(opacity=1); /* IE */  
-		-moz-opacity:1; /* 老版Mozilla */  
-		-khtml-opacity:1; /* 老版Safari */  
-		opacity: 1; /* 支持opacity的浏览器*/
+		filter: alpha(opacity=1);
+		/* IE */
+		-moz-opacity: 1;
+		/* 老版Mozilla */
+		-khtml-opacity: 1;
+		/* 老版Safari */
+		opacity: 1;
+		/* 支持opacity的浏览器*/
 	}
 }
 
 @-webkit-keyframes FadeInRight4 {
 	0% {
 		right: -5px;
-		filter:alpha(opacity=0); /* IE */  
-		-moz-opacity:0; /* 老版Mozilla */  
-		-khtml-opacity:0; /* 老版Safari */  
-		opacity: 0; /* 支持opacity的浏览器*/
+		filter: alpha(opacity=0);
+		/* IE */
+		-moz-opacity: 0;
+		/* 老版Mozilla */
+		-khtml-opacity: 0;
+		/* 老版Safari */
+		opacity: 0;
+		/* 支持opacity的浏览器*/
 	}
+
 	100% {
 		right: 45px;
-		filter:alpha(opacity=1); /* IE */  
-		-moz-opacity:1; /* 老版Mozilla */  
-		-khtml-opacity:1; /* 老版Safari */  
-		opacity: 1; /* 支持opacity的浏览器*/
+		filter: alpha(opacity=1);
+		/* IE */
+		-moz-opacity: 1;
+		/* 老版Mozilla */
+		-khtml-opacity: 1;
+		/* 老版Safari */
+		opacity: 1;
+		/* 支持opacity的浏览器*/
 	}
 }
 
 @-webkit-keyframes FadeInRight5 {
 	0% {
 		right: -5px;
-		filter:alpha(opacity=0); /* IE */  
-		-moz-opacity:0; /* 老版Mozilla */  
-		-khtml-opacity:0; /* 老版Safari */  
-		opacity: 0; /* 支持opacity的浏览器*/
+		filter: alpha(opacity=0);
+		/* IE */
+		-moz-opacity: 0;
+		/* 老版Mozilla */
+		-khtml-opacity: 0;
+		/* 老版Safari */
+		opacity: 0;
+		/* 支持opacity的浏览器*/
 	}
+
 	100% {
 		right: 160px;
-		filter:alpha(opacity=1); /* IE */  
-		-moz-opacity:1; /* 老版Mozilla */  
-		-khtml-opacity:1; /* 老版Safari */  
-		opacity: 1; /* 支持opacity的浏览器*/
+		filter: alpha(opacity=1);
+		/* IE */
+		-moz-opacity: 1;
+		/* 老版Mozilla */
+		-khtml-opacity: 1;
+		/* 老版Safari */
+		opacity: 1;
+		/* 支持opacity的浏览器*/
 	}
 }
+
 @-moz-keyframes FadeInRight0 {
 	0% {
 		right: -5px;
-		filter:alpha(opacity=0); /* IE */  
-		-moz-opacity:0; /* 老版Mozilla */  
-		-khtml-opacity:0; /* 老版Safari */  
-		opacity: 0; /* 支持opacity的浏览器*/
+		filter: alpha(opacity=0);
+		/* IE */
+		-moz-opacity: 0;
+		/* 老版Mozilla */
+		-khtml-opacity: 0;
+		/* 老版Safari */
+		opacity: 0;
+		/* 支持opacity的浏览器*/
 	}
+
 	100% {
 		right: 160px;
-		filter:alpha(opacity=1); /* IE */  
-		-moz-opacity:1; /* 老版Mozilla */  
-		-khtml-opacity:1; /* 老版Safari */  
-		opacity: 1; /* 支持opacity的浏览器*/
+		filter: alpha(opacity=1);
+		/* IE */
+		-moz-opacity: 1;
+		/* 老版Mozilla */
+		-khtml-opacity: 1;
+		/* 老版Safari */
+		opacity: 1;
+		/* 支持opacity的浏览器*/
 	}
 }
 
 @-moz-keyframes FadeInRight1 {
 	0% {
 		right: -5px;
-		filter:alpha(opacity=0); /* IE */  
-		-moz-opacity:0; /* 老版Mozilla */  
-		-khtml-opacity:0; /* 老版Safari */  
-		opacity: 0; /* 支持opacity的浏览器*/
+		filter: alpha(opacity=0);
+		/* IE */
+		-moz-opacity: 0;
+		/* 老版Mozilla */
+		-khtml-opacity: 0;
+		/* 老版Safari */
+		opacity: 0;
+		/* 支持opacity的浏览器*/
 	}
+
 	100% {
 		right: 55px;
-		filter:alpha(opacity=1); /* IE */  
-		-moz-opacity:1; /* 老版Mozilla */  
-		-khtml-opacity:1; /* 老版Safari */  
-		opacity: 1; /* 支持opacity的浏览器*/
+		filter: alpha(opacity=1);
+		/* IE */
+		-moz-opacity: 1;
+		/* 老版Mozilla */
+		-khtml-opacity: 1;
+		/* 老版Safari */
+		opacity: 1;
+		/* 支持opacity的浏览器*/
 	}
 }
 
 @-moz-keyframes FadeInRight2 {
 	0% {
 		right: -5px;
-		filter:alpha(opacity=0); /* IE */  
-		-moz-opacity:0; /* 老版Mozilla */  
-		-khtml-opacity:0; /* 老版Safari */  
-		opacity: 0; /* 支持opacity的浏览器*/
+		filter: alpha(opacity=0);
+		/* IE */
+		-moz-opacity: 0;
+		/* 老版Mozilla */
+		-khtml-opacity: 0;
+		/* 老版Safari */
+		opacity: 0;
+		/* 支持opacity的浏览器*/
 	}
+
 	100% {
 		right: 10px;
-		filter:alpha(opacity=1); /* IE */  
-		-moz-opacity:1; /* 老版Mozilla */  
-		-khtml-opacity:1; /* 老版Safari */  
-		opacity: 1; /* 支持opacity的浏览器*/
+		filter: alpha(opacity=1);
+		/* IE */
+		-moz-opacity: 1;
+		/* 老版Mozilla */
+		-khtml-opacity: 1;
+		/* 老版Safari */
+		opacity: 1;
+		/* 支持opacity的浏览器*/
 	}
 }
 
 @-moz-keyframes FadeInRight3 {
 	0% {
 		right: -5px;
-		filter:alpha(opacity=0); /* IE */  
-		-moz-opacity:0; /* 老版Mozilla */  
-		-khtml-opacity:0; /* 老版Safari */  
-		opacity: 0; /* 支持opacity的浏览器*/
+		filter: alpha(opacity=0);
+		/* IE */
+		-moz-opacity: 0;
+		/* 老版Mozilla */
+		-khtml-opacity: 0;
+		/* 老版Safari */
+		opacity: 0;
+		/* 支持opacity的浏览器*/
 	}
+
 	100% {
 		right: 5px;
-		filter:alpha(opacity=1); /* IE */  
-		-moz-opacity:1; /* 老版Mozilla */  
-		-khtml-opacity:1; /* 老版Safari */  
-		opacity: 1; /* 支持opacity的浏览器*/
+		filter: alpha(opacity=1);
+		/* IE */
+		-moz-opacity: 1;
+		/* 老版Mozilla */
+		-khtml-opacity: 1;
+		/* 老版Safari */
+		opacity: 1;
+		/* 支持opacity的浏览器*/
 	}
 }
 
 @-moz-keyframes FadeInRight4 {
 	0% {
 		right: -5px;
-		filter:alpha(opacity=0); /* IE */  
-		-moz-opacity:0; /* 老版Mozilla */  
-		-khtml-opacity:0; /* 老版Safari */  
-		opacity: 0; /* 支持opacity的浏览器*/
+		filter: alpha(opacity=0);
+		/* IE */
+		-moz-opacity: 0;
+		/* 老版Mozilla */
+		-khtml-opacity: 0;
+		/* 老版Safari */
+		opacity: 0;
+		/* 支持opacity的浏览器*/
 	}
+
 	100% {
 		right: 45px;
-		filter:alpha(opacity=1); /* IE */  
-		-moz-opacity:1; /* 老版Mozilla */  
-		-khtml-opacity:1; /* 老版Safari */  
-		opacity: 1; /* 支持opacity的浏览器*/
+		filter: alpha(opacity=1);
+		/* IE */
+		-moz-opacity: 1;
+		/* 老版Mozilla */
+		-khtml-opacity: 1;
+		/* 老版Safari */
+		opacity: 1;
+		/* 支持opacity的浏览器*/
 	}
 }
 
 @-moz-keyframes FadeInRight5 {
 	0% {
 		right: -5px;
-		filter:alpha(opacity=0); /* IE */  
-		-moz-opacity:0; /* 老版Mozilla */  
-		-khtml-opacity:0; /* 老版Safari */  
-		opacity: 0; /* 支持opacity的浏览器*/
+		filter: alpha(opacity=0);
+		/* IE */
+		-moz-opacity: 0;
+		/* 老版Mozilla */
+		-khtml-opacity: 0;
+		/* 老版Safari */
+		opacity: 0;
+		/* 支持opacity的浏览器*/
 	}
+
 	100% {
 		right: 160px;
-		filter:alpha(opacity=1); /* IE */  
-		-moz-opacity:1; /* 老版Mozilla */  
-		-khtml-opacity:1; /* 老版Safari */  
-		opacity: 1; /* 支持opacity的浏览器*/
+		filter: alpha(opacity=1);
+		/* IE */
+		-moz-opacity: 1;
+		/* 老版Mozilla */
+		-khtml-opacity: 1;
+		/* 老版Safari */
+		opacity: 1;
+		/* 支持opacity的浏览器*/
 	}
 }
+
 @-o-keyframes FadeInRight0 {
 	0% {
 		right: -5px;
-		filter:alpha(opacity=0); /* IE */  
-		-moz-opacity:0; /* 老版Mozilla */  
-		-khtml-opacity:0; /* 老版Safari */  
-		opacity: 0; /* 支持opacity的浏览器*/
+		filter: alpha(opacity=0);
+		/* IE */
+		-moz-opacity: 0;
+		/* 老版Mozilla */
+		-khtml-opacity: 0;
+		/* 老版Safari */
+		opacity: 0;
+		/* 支持opacity的浏览器*/
 	}
+
 	100% {
 		right: 160px;
-		filter:alpha(opacity=1); /* IE */  
-		-moz-opacity:1; /* 老版Mozilla */  
-		-khtml-opacity:1; /* 老版Safari */  
-		opacity: 1; /* 支持opacity的浏览器*/
+		filter: alpha(opacity=1);
+		/* IE */
+		-moz-opacity: 1;
+		/* 老版Mozilla */
+		-khtml-opacity: 1;
+		/* 老版Safari */
+		opacity: 1;
+		/* 支持opacity的浏览器*/
 	}
 }
 
 @-o-keyframes FadeInRight1 {
 	0% {
 		right: -5px;
-		filter:alpha(opacity=0); /* IE */  
-		-moz-opacity:0; /* 老版Mozilla */  
-		-khtml-opacity:0; /* 老版Safari */  
-		opacity: 0; /* 支持opacity的浏览器*/
+		filter: alpha(opacity=0);
+		/* IE */
+		-moz-opacity: 0;
+		/* 老版Mozilla */
+		-khtml-opacity: 0;
+		/* 老版Safari */
+		opacity: 0;
+		/* 支持opacity的浏览器*/
 	}
+
 	100% {
 		right: 55px;
-		filter:alpha(opacity=1); /* IE */  
-		-moz-opacity:1; /* 老版Mozilla */  
-		-khtml-opacity:1; /* 老版Safari */  
-		opacity: 1; /* 支持opacity的浏览器*/
+		filter: alpha(opacity=1);
+		/* IE */
+		-moz-opacity: 1;
+		/* 老版Mozilla */
+		-khtml-opacity: 1;
+		/* 老版Safari */
+		opacity: 1;
+		/* 支持opacity的浏览器*/
 	}
 }
 
 @-o-keyframes FadeInRight2 {
 	0% {
 		right: -5px;
-		filter:alpha(opacity=0); /* IE */  
-		-moz-opacity:0; /* 老版Mozilla */  
-		-khtml-opacity:0; /* 老版Safari */  
-		opacity: 0; /* 支持opacity的浏览器*/
+		filter: alpha(opacity=0);
+		/* IE */
+		-moz-opacity: 0;
+		/* 老版Mozilla */
+		-khtml-opacity: 0;
+		/* 老版Safari */
+		opacity: 0;
+		/* 支持opacity的浏览器*/
 	}
+
 	100% {
 		right: 10px;
-		filter:alpha(opacity=1); /* IE */  
-		-moz-opacity:1; /* 老版Mozilla */  
-		-khtml-opacity:1; /* 老版Safari */  
-		opacity: 1; /* 支持opacity的浏览器*/
+		filter: alpha(opacity=1);
+		/* IE */
+		-moz-opacity: 1;
+		/* 老版Mozilla */
+		-khtml-opacity: 1;
+		/* 老版Safari */
+		opacity: 1;
+		/* 支持opacity的浏览器*/
 	}
 }
 
 @-o-keyframes FadeInRight3 {
 	0% {
 		right: -5px;
-		filter:alpha(opacity=0); /* IE */  
-		-moz-opacity:0; /* 老版Mozilla */  
-		-khtml-opacity:0; /* 老版Safari */  
-		opacity: 0; /* 支持opacity的浏览器*/
+		filter: alpha(opacity=0);
+		/* IE */
+		-moz-opacity: 0;
+		/* 老版Mozilla */
+		-khtml-opacity: 0;
+		/* 老版Safari */
+		opacity: 0;
+		/* 支持opacity的浏览器*/
 	}
+
 	100% {
 		right: 5px;
-		filter:alpha(opacity=1); /* IE */  
-		-moz-opacity:1; /* 老版Mozilla */  
-		-khtml-opacity:1; /* 老版Safari */  
-		opacity: 1; /* 支持opacity的浏览器*/
+		filter: alpha(opacity=1);
+		/* IE */
+		-moz-opacity: 1;
+		/* 老版Mozilla */
+		-khtml-opacity: 1;
+		/* 老版Safari */
+		opacity: 1;
+		/* 支持opacity的浏览器*/
 	}
 }
 
 @-o-keyframes FadeInRight4 {
 	0% {
 		right: -5px;
-		filter:alpha(opacity=0); /* IE */  
-		-moz-opacity:0; /* 老版Mozilla */  
-		-khtml-opacity:0; /* 老版Safari */  
-		opacity: 0; /* 支持opacity的浏览器*/
+		filter: alpha(opacity=0);
+		/* IE */
+		-moz-opacity: 0;
+		/* 老版Mozilla */
+		-khtml-opacity: 0;
+		/* 老版Safari */
+		opacity: 0;
+		/* 支持opacity的浏览器*/
 	}
+
 	100% {
 		right: 45px;
-		filter:alpha(opacity=1); /* IE */  
-		-moz-opacity:1; /* 老版Mozilla */  
-		-khtml-opacity:1; /* 老版Safari */  
-		opacity: 1; /* 支持opacity的浏览器*/
+		filter: alpha(opacity=1);
+		/* IE */
+		-moz-opacity: 1;
+		/* 老版Mozilla */
+		-khtml-opacity: 1;
+		/* 老版Safari */
+		opacity: 1;
+		/* 支持opacity的浏览器*/
 	}
 }
 
 @-o-keyframes FadeInRight5 {
 	0% {
 		right: -5px;
-		filter:alpha(opacity=0); /* IE */  
-		-moz-opacity:0; /* 老版Mozilla */  
-		-khtml-opacity:0; /* 老版Safari */  
-		opacity: 0; /* 支持opacity的浏览器*/
+		filter: alpha(opacity=0);
+		/* IE */
+		-moz-opacity: 0;
+		/* 老版Mozilla */
+		-khtml-opacity: 0;
+		/* 老版Safari */
+		opacity: 0;
+		/* 支持opacity的浏览器*/
 	}
+
 	100% {
 		right: 160px;
-		filter:alpha(opacity=1); /* IE */  
-		-moz-opacity:1; /* 老版Mozilla */  
-		-khtml-opacity:1; /* 老版Safari */  
-		opacity: 1; /* 支持opacity的浏览器*/
+		filter: alpha(opacity=1);
+		/* IE */
+		-moz-opacity: 1;
+		/* 老版Mozilla */
+		-khtml-opacity: 1;
+		/* 老版Safari */
+		opacity: 1;
+		/* 支持opacity的浏览器*/
 	}
 }
 
@@ -642,7 +960,7 @@
 
 .navsCon {
 	background: rgba(0, 0, 0, .4);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#66000000,endColorstr=#66000000);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#66000000, endColorstr=#66000000);
 	border: 1px solid #fa953c;
 	margin-top: 170px;
 	width: 29%;
@@ -652,9 +970,9 @@
 .navsCon div {
 	padding: 38px 34px;
 	display: none;
-	height:275px;
-	overflow:hidden;
-	text-overflow:elipise;
+	height: 275px;
+	overflow: hidden;
+	text-overflow: elipise;
 }
 
 .navsCon div a {
@@ -673,7 +991,7 @@
 	-webkit-box-orient: vertical;
 	-webkit-line-clamp: 10;
 	height: auto;
-	text-indent:2em;
+	text-indent: 2em;
 }
 
 /*事故快讯、多媒体资料开始*/
@@ -699,6 +1017,7 @@
 	*display: inline;
 	*zoom: 1;
 }
+
 .news_wrap .container div.accident a.titleLeft:hover,
 .news_wrap .container div.media a.titleLeft:hover {
 	color: #474747;
@@ -751,35 +1070,40 @@
 	// background: #fff url(../images/accident-2.png) no-repeat right bottom;
 	float: right;
 }
+
 .news_wrap .container div.media p.textOne {
 	// background: url(../images/left_img.png) no-repeat left center;
 	padding-left: 20px;
 }
 
-.icon_accident{
+.icon_accident {
 	width: 24px;
 	height: 20px;
 	background-position: 0 -236px;
 	margin-right: 3px;
 }
-.icon_media{
+
+.icon_media {
 	width: 22px;
 	height: 22px;
 	background-position: -50px -236px;
 	margin-right: 3px;
 }
-.icon_accident{
+
+.icon_accident {
 	width: 24px;
 	height: 20px;
 	background-position: 0 -236px;
 	margin-right: 3px;
 }
-.icon_media{
+
+.icon_media {
 	width: 22px;
 	height: 22px;
 	background-position: -50px -236px;
 	margin-right: 3px;
 }
+
 /*危化品快速查询*/
 .searchInput_bomb {
 	position: absolute;
@@ -825,19 +1149,21 @@
 /*.WHPQuery_Bottom {
 	margin-top: 25px;
 }*/
-.WHPQuery_Bottom:before,.WHPQuery_Bottom:after {
+.WHPQuery_Bottom:before,
+.WHPQuery_Bottom:after {
 	content: '';
 	display: block;
 	clear: both;
 }
 
 .WHPQuery_Con .WHPQuery_Title {
-	color:#f97145;
+	color: #f97145;
 	font-size: 26px;
 	text-align: center;
 }
 
-.WHPQuery_Left,.WHPQuery_Right {
+.WHPQuery_Left,
+.WHPQuery_Right {
 	float: left;
 }
 
@@ -936,13 +1262,15 @@
 	padding-bottom: 30px;
 }
 
-.WHPQuery_Right_List:before,.WHPQuery_Right_List:after {
+.WHPQuery_Right_List:before,
+.WHPQuery_Right_List:after {
 	content: '';
 	display: block;
 	clear: both;
 }
 
-.WHPQuery_Right_Main,.WHPQuery_Right_Details {
+.WHPQuery_Right_Main,
+.WHPQuery_Right_Details {
 	float: left;
 }
 
@@ -994,9 +1322,10 @@
 	float: none;
 	overflow: hidden;
 	margin-left: 190px;
-}	
+}
 
-.WHPQuery_Right_Details dl:before,.WHPQuery_Right_Details dl:after {
+.WHPQuery_Right_Details dl:before,
+.WHPQuery_Right_Details dl:after {
 	content: '';
 	display: block;
 	clear: both;
@@ -1006,7 +1335,8 @@
 	margin-bottom: 15px;
 }
 
-.WHPQuery_Right_Details dt,.WHPQuery_Right_Details dd {
+.WHPQuery_Right_Details dt,
+.WHPQuery_Right_Details dd {
 	float: left;
 }
 
@@ -1018,7 +1348,7 @@
 .WHPQuery_Right_Details dd {
 	color: #707070;
 	padding-left: 10px;
-	width:86%;
+	width: 86%;
 }
 
 .WHPQuery_Right_Details dl.HealthHarm {
@@ -1049,19 +1379,21 @@
 	padding: 30px 0 70px 0;
 }
 
-.ToolUse_Con:before,.ToolUse_Con:after {
+.ToolUse_Con:before,
+.ToolUse_Con:after {
 	content: '';
 	display: block;
 	clear: both;
 }
 
 .ToolUse_Con .ToolUse_Title {
-	color:#f97145;
+	color: #f97145;
 	font-size: 26px;
 	text-align: center;
 }
 
-.ToolUse_Bottom:before,.ToolUse_Bottom:after {
+.ToolUse_Bottom:before,
+.ToolUse_Bottom:after {
 	content: '';
 	display: block;
 	clear: both;
@@ -1070,7 +1402,8 @@
 /*.ToolUse_Bottom {
 	margin-top: 25px;
 }*/
-.ToolUse_Left,.ToolUse_Right {
+.ToolUse_Left,
+.ToolUse_Right {
 	float: left;
 }
 
@@ -1106,8 +1439,8 @@
 	width: 100%;
 	white-space: nowrap;
 	overflow: hidden;
-  text-overflow: ellipsis;
-  color: #474747;
+	text-overflow: ellipsis;
+	color: #474747;
 }
 
 .ToolUse_Left_Tab>ul.TabOne>li>a:hover {
@@ -1117,6 +1450,7 @@
 .ToolUse_Left_Tab>ul.TabOne>li>a.cur {
 	color: #f96c3e;
 }
+
 .ToolUse_Left_TabTwo>ul>li>a.cur {
 	color: #f96c3e;
 }
@@ -1129,7 +1463,7 @@
 	overflow-x: hidden;
 }
 
-.ToolUse_Left_Tab>ul.TabOne	 .search {
+.ToolUse_Left_Tab>ul.TabOne .search {
 	position: relative;
 	margin-bottom: 5px;
 }
@@ -1180,7 +1514,7 @@
 	overflow: hidden;
 	text-overflow: ellipsis;
 	padding-left: 15px;
-	color:#474747;
+	color: #474747;
 }
 
 .ToolUse_Left_Tab>ul.TabOne>li>ul.TabTwo>li>a:hover {
@@ -1273,7 +1607,7 @@
 
 .ToolUse_Right_List h1 {
 	line-height: 37px;
-	margin:0;
+	margin: 0;
 }
 
 .ToolUse_Right_List h1 a {
@@ -1294,7 +1628,7 @@
 
 .ToolUse_Right_List p {
 	color: #909090;
-	margin:0;
+	margin: 0;
 	line-height: 25px;
 	margin-top: 4px;
 	// text-overflow: -o-ellipsis-lastline;
@@ -1304,7 +1638,7 @@
 	-webkit-box-orient: vertical;
 	-webkit-line-clamp: 3;
 	max-height: 75px;
-	text-indent:2em;
+	text-indent: 2em;
 }
 
 .ToolUse_Right_List:hover {
@@ -1324,7 +1658,8 @@
 }
 
 /*工具的安全使用-图片列表*/
-.ToolUse_Right>div:before,.ToolUse_Right>div::after {
+.ToolUse_Right>div:before,
+.ToolUse_Right>div::after {
 	content: '';
 	display: block;
 	clear: both;
@@ -1345,6 +1680,7 @@
 	width: 100%;
 	height: 228px;
 }
+
 .ToolUse_Right_ImgList a.img>img {
 	width: 100%;
 	height: 100%;
@@ -1500,6 +1836,13 @@
 	margin: 0 auto;
 }
 
+.MultiMedia_Bottom .Video video {
+	width: 100%;
+	max-height: 500px;
+	margin: 0;
+	padding: 0;
+}
+
 .MultiMedia_Bottom .Text {
 	color: #707070;
 	margin-top: 36px;
@@ -1512,7 +1855,7 @@
 	-webkit-box-orient: vertical;
 	-webkit-line-clamp: 3;
 	height: 66px;
-	text-indent:2em;
+	text-indent: 2em;
 }
 
 .ArticlePage a {
@@ -1562,10 +1905,11 @@
 	-webkit-box-orient: vertical;
 	-webkit-line-clamp: 6;
 	/* max-height: 132px; */
-	text-indent:2em;
+	text-indent: 2em;
 }
 
-.ShareDetailsBlock .img:before,.ShareDetailsBlock .img:after {
+.ShareDetailsBlock .img:before,
+.ShareDetailsBlock .img:after {
 	content: '';
 	display: block;
 	clear: both;
@@ -1589,7 +1933,8 @@
 	width: 100%;
 }
 
-.ShareDetailsBlockAnother:before,.ShareDetailsBlockAnother:after {
+.ShareDetailsBlockAnother:before,
+.ShareDetailsBlockAnother:after {
 	content: '';
 	display: block;
 	clear: both;
@@ -1597,10 +1942,11 @@
 
 .ShareDetailsBlockAnother {
 	// background: #fff url(../images/detail-bg.png) no-repeat right 34px
-		// !important;
+	// !important;
 }
 
-.ShareDetailsBlockAnother .left,.ShareDetailsBlockAnother .right {
+.ShareDetailsBlockAnother .left,
+.ShareDetailsBlockAnother .right {
 	float: left;
 }
 
@@ -1638,8 +1984,8 @@
 	overflow: hidden;
 }
 
-.ShareDetailsBlockAnother .right dt,.ShareDetailsBlockAnother .right dd
-	{
+.ShareDetailsBlockAnother .right dt,
+.ShareDetailsBlockAnother .right dd {
 	float: left;
 	margin-bottom: 12px;
 }
@@ -1669,7 +2015,8 @@
 	text-overflow: ellipsis;
 } */
 
-.ClassicCaseBlock:before,.ClassicCaseBlock:after {
+.ClassicCaseBlock:before,
+.ClassicCaseBlock:after {
 	content: '';
 	display: block;
 	clear: both;
@@ -1696,8 +2043,8 @@
 	*display: inline;
 	*zoom: 1;
 	padding-bottom: 10px;
-	width:98%;
-    display: inline-block;
+	width: 98%;
+	display: inline-block;
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -1714,10 +2061,12 @@
 	-webkit-box-orient: vertical;
 	-webkit-line-clamp: 3;
 	height: 80px;
-	text-indent:2em;
+	text-indent: 2em;
 }
 
-table,table tr th,table tr td {
+table,
+table tr th,
+table tr td {
 	border: 1px solid #dfdfdf;
 	font-size: 14px;
 	color: #686868;
@@ -1748,14 +2097,14 @@ table tr td.formname {
 }
 
 .MediaBlockAnother .Video {
-	width: 90%; 
+	width: 90%;
 	margin: 24px auto;
 	text-align: center;
 }
 
 .MediaBlockAnother p {
 	line-height: 25px;
-	text-indent:2em;
+	text-indent: 2em;
 }
 
 /*高级检索*/
@@ -1783,7 +2132,8 @@ table tr td.formname {
 	border-bottom: 4px solid #c7000a;
 }
 
-.con:before,.con:after {
+.con:before,
+.con:after {
 	content: '';
 	display: block;
 	clear: both;
@@ -1846,7 +2196,10 @@ table tr td.formname {
 	// background-image: url(../images/info_reduce.png);
 }
 
-.info1,.info2,.info4,.info5 {
+.info1,
+.info2,
+.info4,
+.info5 {
 	position: absolute;
 	top: 0;
 }
@@ -1912,11 +2265,16 @@ table tr td.formname {
 }
 
 .gj_btn .btn:hover {
-	filter:alpha(opacity=80); /* IE */  
-	-moz-opacity:0.8; /* 老版Mozilla */  
-	-khtml-opacity:0.8; /* 老版Safari */  
-	opacity: 0.8; /* 支持opacity的浏览器*/
+	filter: alpha(opacity=80);
+	/* IE */
+	-moz-opacity: 0.8;
+	/* 老版Mozilla */
+	-khtml-opacity: 0.8;
+	/* 老版Safari */
+	opacity: 0.8;
+	/* 支持opacity的浏览器*/
 }
+
 /*搜索页*/
 .SearchPage_wrap {
 	border-top: 1px solid #dedede;
@@ -1943,6 +2301,7 @@ table tr td.formname {
 	font-weight: normal;
 	color: #666;
 }
+
 /* 
 .SearchPage_wrap a:hover u{
 	color:#f96c3e;
@@ -2048,12 +2407,12 @@ table tr td.formname {
 	float: none;
 	width: 92%;
 	border-top: 0 none;
-	height:auto;
+	height: auto;
 }
 
 .SearchPage_wrap .ClassicCaseCon a {
 	font-size: 18px;
-	display:inline;
+	display: inline;
 }
 
 .SearchPage_wrap .ClassicCaseCon p {
@@ -2072,8 +2431,12 @@ table tr td.formname {
 	color: #fc6129;
 }
 
-.SearchPage_One h1 a,.SearchPage_Two h1 a,.SearchPage_Three h1 a,.SearchPage_Four h1 a,.SearchPage_Five h1 a,.SearchPage_Six h1 a
-	{
+.SearchPage_One h1 a,
+.SearchPage_Two h1 a,
+.SearchPage_Three h1 a,
+.SearchPage_Four h1 a,
+.SearchPage_Five h1 a,
+.SearchPage_Six h1 a {
 	width: auto;
 	line-height: 26px;
 }
@@ -2104,7 +2467,7 @@ table tr td.formname {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	display: -webkit-box;
-	-webkit-line-clamp:auto;
+	-webkit-line-clamp: auto;
 	-webkit-box-orient: vertical;
 }
 
@@ -2112,7 +2475,7 @@ table tr td.formname {
 	/* height: 137px; */
 	overflow: hidden;
 	margin-top: 8px;
-	line-height:25px;
+	line-height: 25px;
 	text-overflow: -o-ellipsis-lastline;
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -2120,8 +2483,8 @@ table tr td.formname {
 	-webkit-box-orient: vertical;
 	-webkit-line-clamp: 4;
 	height: 100px;
-	text-align:left;
-	text-indent:2em;
+	text-align: left;
+	text-indent: 2em;
 }
 
 .ToolUse_Right .ImgList div p {
@@ -2131,8 +2494,8 @@ table tr td.formname {
 
 #emergency .ToolUse_Right .ToolUse_Right_List {
 	max-height: 131px;
-    height: auto;
-    padding: 8px 0;
+	height: auto;
+	padding: 8px 0;
 }
 
 .Standardize .ToolUse_Right_List {
@@ -2143,22 +2506,27 @@ table tr td.formname {
 	width: 100%;
 	line-height: 26px;
 }
-.Standardize .ToolUse_Right_List div{
-	max-height:70px;
+
+.Standardize .ToolUse_Right_List div {
+	max-height: 70px;
 }
-.Standardize .ToolUse_Right_List div p{
-	height:auto;
+
+.Standardize .ToolUse_Right_List div p {
+	height: auto;
 }
+
 .accidentCase .ToolUse_Right_List {
 	// max-height: 113px;
-    height: auto;
-    padding: 8px 0;
-    text-align:left;
+	height: auto;
+	padding: 8px 0;
+	text-align: left;
 }
-.accidentCase .ToolUse_Right_List a{
-  color:#474747;
-  background:url(http://safety.yooso.com.cn/resources/images/title_icon.png) no-repeat!important;
+
+.accidentCase .ToolUse_Right_List a {
+	color: #474747;
+	background: url(http://safety.yooso.com.cn/resources/images/title_icon.png) no-repeat !important;
 }
+
 /* .accidentCase .ToolUse_Right_List p {
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -2169,21 +2537,22 @@ table tr td.formname {
 } */
 
 
-.SearchPage .ToolUse_Right_List{
-	height:auto;
+.SearchPage .ToolUse_Right_List {
+	height: auto;
 }
 
 
-.ToolUse_wrap .ShareDetailsCon img{
-	max-width:96%;
+.ToolUse_wrap .ShareDetailsCon img {
+	max-width: 96%;
 }
 
 
-.loginPrompt{
-	color:#f96c3e;
+.loginPrompt {
+	color: #f96c3e;
 }
-.loginPrompt:hover{
-	text-decoration:underline;
+
+.loginPrompt:hover {
+	text-decoration: underline;
 }
 
 
@@ -2241,15 +2610,15 @@ table tr td.formname {
 	/* background: #000; */
 	/* opacity: .3;
 	filter: alpha(opacity=30); */
-	background:rgba(0,0,0,.3);
+	background: rgba(0, 0, 0, .3);
 	display: none;
 	z-index: 9998;
 }
 
 .Tips {
 	position: absolute;
-	left:150px;
-	top:150px;
+	left: 150px;
+	top: 150px;
 	z-index: 9999;
 	background: #fff;
 	width: auto;
@@ -2274,7 +2643,7 @@ table tr td.formname {
 .Tips .TipsTitle a {
 	float: right;
 	padding-right: 15px;
-	padding-top:10px;
+	padding-top: 10px;
 }
 
 .Tips .TipsTitle a img {
@@ -2286,12 +2655,12 @@ table tr td.formname {
 	padding: 35px 60px 80px 60px;
 	line-height: 25px;
 	/* font-size: 16px; */
-	text-align:center;
+	text-align: center;
 }
 
 .Tips .TipsText a {
 	color: #f96c3e;
-	font-weight:bold;
+	font-weight: bold;
 }
 
 .Tips .TipsText a:hover {
@@ -2302,9 +2671,10 @@ table tr td.formname {
 input::-ms-clear {
 	display: none;
 }
+
 /*清除ie的默认选择框样式清除，隐藏下拉箭头*/
-select::-ms-expand { 
-	display: none; 
+select::-ms-expand {
+	display: none;
 }
 
 .big-title {
@@ -2316,9 +2686,8 @@ select::-ms-expand {
 	display: inline-block;
 	*display: inline;
 	*zoom: 1;
-	width:100%;
+	width: 100%;
 	padding: 8px 0;
 	font-size: 24px;
 	border-bottom: 5px solid #fd622a;
 }
-
