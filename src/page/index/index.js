@@ -51,7 +51,7 @@ $('#iconRight').click(function(){
 //请求分类信息 拼接赋值
 $.ajax({
   type : "post",
-  url : commonConfig.APIUrl+"/info/getLabel",
+  url : commonConfig.APIUrl+"/info/v2/getMenu",
   data : {},
   dataType : "json",
   success : function(res) {
@@ -64,19 +64,19 @@ $.ajax({
       var _canvasKeyId=localStorage.getItem('canvasKey')
       for(var redai=0;redai<resultData.length;redai++){
         swiperhtml+='<div class="swiper-slide">'+
-                    '<div class="swiper-name">'+resultData[redai].name+'</div>'+
-                    '<div class="swiper-text">'+resultData[redai].actionContent+'</div>'+
+                    '<div class="swiper-name">'+resultData[redai].menuName+'</div>'+
+                    '<div class="swiper-text">'+resultData[redai].menuText+'</div>'+
                     '</div>'
         if(_canvasKeyId&&_canvasKeyId==resultData[redai].id||(!_canvasKeyId&&redai==0)){
           iconhtml+='<div class="one-canvas canvasFocus one-canvas'+redai+'" ids="'+resultData[redai].id+'" indexs="'+redai+'">'+
-                  '<img src="'+resultData[redai].icon+'" /><p>'+resultData[redai].name+'</p></div>'
+                  '<img src="'+resultData[redai].menuIcon+'" /><p>'+resultData[redai].menuName+'</p></div>'
         }else{
           iconhtml+='<div class="one-canvas one-canvas'+redai+'" ids="'+resultData[redai].id+'" indexs="'+redai+'">'+
-                  '<img src="'+resultData[redai].icon+'" /><p>'+resultData[redai].name+'</p></div>'
+                  '<img src="'+resultData[redai].menuIcon+'" /><p>'+resultData[redai].menuName+'</p></div>'
         }      
       }
       $(".new-swiper-warp").append(swiperhtml)
-      iconhtml+="<div class='moreCanvas'>+ 更多工种</div>"
+      iconhtml+="<div class='moreCanvas'>+ 更多知识库</div>"
       $(".title-canvas").append(iconhtml)
       //初始化轮播图
       mySwiper = new Swiper('.swiper-container', {
@@ -93,18 +93,18 @@ $.ajax({
       if(_canvasKeyId){
         var _swiperIndex=localStorage.getItem('_swiperIndex')
         mySwiper.slideTo(Number(_swiperIndex)+1)
-        getMenuList(_canvasKeyId)
+        //(_canvasKeyId)
       }else{
         localStorage.setItem('canvasKey',resultData[0].id)
-        localStorage.setItem('canvasKeyText',resultData[0].name)
-        getMenuList(resultData[0].id)
+        localStorage.setItem('canvasKeyText',resultData[0].menuName)
+        //getMenuList(resultData[0].id)
       }
     }
   }
 });
 function getMenuList(labelId){
   $("#loading").show()
-  var _url=commonConfig.APIUrl+"/info/v1/getMenu"
+  var _url=commonConfig.APIUrl+"/info/v2/getMenu"
   if(labelId){
     _url=_url+"?labelId="+labelId
   }
@@ -125,17 +125,17 @@ function getMenuList(labelId){
           for(var childI=0;childI<fenleidata[conI].childs.length;childI++){
             if(childI<3){
               if(fenleidata[conI].menuType==3){
-                childHtml+=' <li class="" menuLiId='+fenleidata[conI].childs[childI].id+' menuId='+fenleidata[conI].id+' menutype='+fenleidata[conI].menuType+'>'+
+                childHtml+=' <li class="" menuLiId='+fenleidata[conI].childs[childI].id+' menuId='+fenleidata[conI].id+'menuName='+fenleidata[conI].menuName+' menutype='+fenleidata[conI].menuType+'>'+
                           '<a class="" target="_blank" href="'+fenleidata[conI].childs[childI].menuUrl+'" menuurl='+fenleidata[conI].menuUrl+' repoid="'+fenleidata[conI].childs[childI].id+'" menutype='+fenleidata[conI].menuType+
                           '>'+fenleidata[conI].childs[childI].menuName+'</a></li>'
               }else{
-                childHtml+=' <li class="" menuLiId='+fenleidata[conI].childs[childI].id+' menuId='+fenleidata[conI].id+' menutype='+fenleidata[conI].menuType+'>'+
+                childHtml+=' <li class="" menuLiId='+fenleidata[conI].childs[childI].id+' menuName='+fenleidata[conI].menuName+' menuId='+fenleidata[conI].id+' menutype='+fenleidata[conI].menuType+'>'+
                   '<a class="gotoDetail" menuurl='+fenleidata[conI].menuUrl+' repoid="'+fenleidata[conI].childs[childI].id+'" menutype='+fenleidata[conI].menuType+
                   '>'+fenleidata[conI].childs[childI].menuName+'</a></li>'
               }
             }
           }
-          oneConternHtml+=' <div class="one-content left"><div class="content-title gotoClassify" menuId='+fenleidata[conI].id+' menutype='+fenleidata[conI].menuType+'>'+fenleidata[conI].menuName+
+          oneConternHtml+=' <div class="one-content left"><div class="content-title gotoClassify" menuId='+fenleidata[conI].id+' menuName='+fenleidata[conI].menuName+' menutype='+fenleidata[conI].menuType+'>'+fenleidata[conI].menuName+
                           '<div class="title_dian"></div><span class="dian_dian">...</span></div><div class="content-body">'+
                           '<ul>'+childHtml+'</ul></div></div>' 
           
@@ -151,6 +151,8 @@ $(".index-content").on('click','.gotoClassify',function(){
   //获取分类的type，进行跳转的判断
   var urlMenuType=$(this).attr('menutype')
   var urlmenuId=$(this).attr('menuId')
+  var urlMenuName = $(this).attr('menuName')
+    console.log(urlmenuId+"#####"+urlMenuName)
   var menuLiId=$(this).attr('menuLiId')
   if(!menuLiId){
     menuLiId=''
@@ -166,7 +168,7 @@ $(".index-content").on('click','.gotoClassify',function(){
   }else if(urlMenuType==4){
     location.href="/mediaClassify.html?menuId="+urlmenuId
   }else{
-    location.href="/classify.html?menuId="+urlmenuId
+    location.href="/classify.html?menuId="+urlmenuId+"&menuName="+urlMenuName
   }
 })
 //跳转详情页
@@ -222,16 +224,38 @@ $(".see-moreContent").click(function(){
     $(this).html('点击显示全部')
   }
 });
+
+//点击分类图表，切换下面数据显示
+$(".title-canvas .one-canvas").mouseover(function(){
+    console.log("mouseenter")
+    var _typId=$(this).attr('ids');
+    $(this).parent().find('.canvasFocus').removeClass('canvasFocus');
+    $(this).addClass('canvasFocus');
+    var _swiperIndex=$(this).attr('indexs');
+    //缓存好上一次点击的数据
+    localStorage.setItem('canvasKey',_typId)
+    localStorage.setItem('canvasKeyText',classifyData[_swiperIndex].menuName)
+    localStorage.setItem('_swiperIndex',_swiperIndex)
+    mySwiper.slideTo(Number(_swiperIndex)+1)
+    getMenuList(_typId)
+})
+
 //点击分类图表，切换下面数据显示
 $(".title-canvas").on('click','.one-canvas',function(){
+  console.log("click")
   var _typId=$(this).attr('ids');
+
   $(this).parent().find('.canvasFocus').removeClass('canvasFocus');
   $(this).addClass('canvasFocus');
   var _swiperIndex=$(this).attr('indexs');
   //缓存好上一次点击的数据
+  var menuId=_typId;
+  var menuName=classifyData[_swiperIndex].menuName;
   localStorage.setItem('canvasKey',_typId)
-  localStorage.setItem('canvasKeyText',classifyData[_swiperIndex].name)
+  localStorage.setItem('canvasKeyText',classifyData[_swiperIndex].menuName)
   localStorage.setItem('_swiperIndex',_swiperIndex)
   mySwiper.slideTo(Number(_swiperIndex)+1)
-  getMenuList(_typId)
+  window.open("/classify.html?menuId="+menuId+"&menuName="+menuName)
+  // location.href="/classify.html?menuId="+menuId+"&menuName="+menuName
+  // getMenuList(_typId)
 })

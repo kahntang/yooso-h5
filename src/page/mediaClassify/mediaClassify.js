@@ -35,7 +35,7 @@ function getData(page){
   $("#searchText").val('')
   $.ajax({
     type : "post",
-    url : commonConfig.APIUrl+"/info/v1/getRepo?menuId="+menuId+"&pageSize=10&pageNo="+page+"&labelId="+_labelId,
+    url : commonConfig.APIUrl+"/info/v2/getRepo?menuId="+menuId+"&pageSize=10&pageNo="+page+"&labelId="+_labelId,
     data : {},
     dataType : "json",
     success : function(res) {

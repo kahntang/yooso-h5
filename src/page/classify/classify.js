@@ -20,7 +20,12 @@ function getQueryVariable(variable){
   var vars = query.split("&");
   for (var i=0;i<vars.length;i++) {
     var pair = vars[i].split("=");
-    if(pair[0] == variable){return pair[1];}
+    if(pair[0] == variable){
+        if(pair[1]!=null){
+            return decodeURIComponent(pair[1]);
+        }
+        return pair[1];
+    }
   }
   return(false);
 }
@@ -35,7 +40,7 @@ function getData(page){
   $("#searchText").val('')
   $.ajax({
     type : "post",
-    url : commonConfig.APIUrl+"/info/v1/getRepo?menuId="+menuId+"&pageSize=10&pageNo="+page+"&labelId="+_labelId,
+    url : commonConfig.APIUrl+"/info/v2/getRepo?menuId="+menuId+"&pageSize=10&pageNo="+page+"&labelId="+_labelId,
     data : {},
     dataType : "json",
     success : function(res) {
@@ -198,7 +203,8 @@ function getHotData(){
         }
     })
 }
-var _canvasKeyText=localStorage.getItem('canvasKeyText')
+// var _canvasKeyText=localStorage.getItem('canvasKeyText')
+var _canvasKeyText=getQueryVariable('menuName')
 $("#tab_labelText").html(_canvasKeyText)
 var leftTop;
 $(function(){

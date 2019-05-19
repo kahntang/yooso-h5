@@ -17,7 +17,7 @@ function alertFunction(msg) {
 $("#loading").show()
 $.ajax({
     type: "post",
-    url: commonConfig.APIUrl+"/info/getLabel",
+    url: commonConfig.APIUrl+"/info/v2/getMenu",
     data: {},
     dataType: "json",
     success: function (res) {
@@ -28,9 +28,9 @@ $.ajax({
             var rediaHtml = ''
             // //轮播图区域
             for (var redai = 0; redai < resultData.length; redai++) {
-                rediaHtml += ' <div class="one-content left" labelId=' + resultData[redai].id + ' labelName=' + resultData[redai].name + '><div class="content-title gotoClassify" menuId=' + resultData[redai].id + ' menutype=' + resultData[redai].menuType + '>' + resultData[redai].name +
+                rediaHtml += ' <div class="one-content left" labelId=' + resultData[redai].id + ' labelName=' + resultData[redai].menuName + '><div class="content-title gotoClassify" menuId=' + resultData[redai].id + ' menutype=' + resultData[redai].menuType + '>' + resultData[redai].menuName +
                     '</div><div class="content-body">' +
-                    '<ul><li>' + resultData[redai].actionContent + '</li></ul></div></div>'
+                    '<ul><li>' + resultData[redai].menuText + '</li></ul></div></div>'
             }
             $(".index-content").append(rediaHtml)
         }
@@ -63,7 +63,7 @@ $(".index-content").on('click', '.one-content', function () {
 
 function getMenuList(labelId) {
     $("#loading").show()
-    var _url = commonConfig.APIUrl+"/info/v1/getMenu"
+    var _url = commonConfig.APIUrl+"/info/v2/getMenu"
     if (labelId) {
         _url = _url + "?labelId=" + labelId
     }
