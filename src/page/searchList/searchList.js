@@ -47,7 +47,7 @@ function getData(page){
   var _labelId=localStorage.getItem('canvasKey')
   $.ajax({
     type : "post",
-    url : "http://safety.kahntang.com/search/adv?keyword="+searchText+"&pageNo="+page+"&style=SUMMARY&highlight=true&menuId=0&pageSize=10&labelId="+_labelId,
+    url : commonConfig.APIUrl+"/search/adv?keyword="+searchText+"&pageNo="+page+"&style=SUMMARY&highlight=true&menuId=0&pageSize=10&labelId="+_labelId,
     data : {},
     dataType : "json",
     success : function(res) {

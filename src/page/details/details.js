@@ -3,8 +3,8 @@ require("./../../../static/css/style.css");
 require("./details.less");
 // var StaticUrl="http://safety.yooso.com.cn/resources/"
 // var StaticUrl = "http://safety.kahntang.com/"
-var StaticUrl = "";
-
+var commonConfig=require('./../../../static/js/common.js').commonConfig
+var StaticUrl=commonConfig.StaticUrl
 //弹出层方法
 function alertFunction(msg) {
   $("body #aleertText").html(msg);
@@ -39,7 +39,7 @@ function getDetail() {
   $.ajax({
     type: "post",
     url:
-      "http://safety.kahntang.com/info/getRepoDetail?repoId=" +
+      commonConfig.APIUrl+"/info/getRepoDetail?repoId=" +
       repoId +
       "&token=" +
       token,
@@ -179,7 +179,7 @@ function getOtherData() {
   $.ajax({
     type: "post",
     url:
-      "http://safety.kahntang.com/search/getReltRepo2?token=" +
+      commonConfig.APIUrl+"/search/getReltRepo2?token=" +
       token +
       "&entityId=" +
       repoId,

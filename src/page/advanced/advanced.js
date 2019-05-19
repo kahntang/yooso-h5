@@ -76,7 +76,7 @@ function getAdvancedSearch(curr,queryString) {
   $("#loading").show()
   $.ajax({
     type : "post",
-    url : "http://safety.kahntang.com/search/adv?"+queryString+"style=SUMMARY&highlight=true&pageNo="+curr+"&pageSize=10&labelId="+_labelId,
+    url : commonConfig.APIUrl+"/search/adv?"+queryString+"style=SUMMARY&highlight=true&pageNo="+curr+"&pageSize=10&labelId="+_labelId,
     dataType : "json",
     success : function(res) {
       $("#loading").hide()
@@ -195,7 +195,7 @@ function getConfig(){
   $("#loading").show()
   $.ajax({
     type : "post",
-    url : "http://safety.kahntang.com/info/getAdvConfig",
+    url : commonConfig.APIUrl+"/info/getAdvConfig",
     data : {},
     dataType : "json",
     success : function(res) {

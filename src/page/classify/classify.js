@@ -35,7 +35,7 @@ function getData(page){
   $("#searchText").val('')
   $.ajax({
     type : "post",
-    url : "http://safety.kahntang.com/info/v1/getRepo?menuId="+menuId+"&pageSize=10&pageNo="+page+"&labelId="+_labelId,
+    url : commonConfig.APIUrl+"/info/v1/getRepo?menuId="+menuId+"&pageSize=10&pageNo="+page+"&labelId="+_labelId,
     data : {},
     dataType : "json",
     success : function(res) {
@@ -150,7 +150,7 @@ getHotData()
 function getHotData(){
     $.ajax({
         type : "post",
-        url : "http://safety.kahntang.com/info/v1/getHotRepo?labelId="+_labelId,
+        url : commonConfig.APIUrl+"/info/v1/getHotRepo?labelId="+_labelId,
         data : {},
         dataType : "json",
         success : function(res) {
@@ -285,7 +285,7 @@ function getSearchData(page){
   var searchText=$("#searchText").val()
   $.ajax({
     type : "post",
-    url : "http://safety.kahntang.com/search/adv?menuId="+getQueryVariable('menuId')+"&pageSize=10&pageNo="+page+"&keyword="+searchText+"&style=SUMMARY&highlight=true&labelId="+_labelId,
+    url : commonConfig.APIUrl+"/search/adv?menuId="+getQueryVariable('menuId')+"&pageSize=10&pageNo="+page+"&keyword="+searchText+"&style=SUMMARY&highlight=true&labelId="+_labelId,
     data : {},
     dataType : "json",
     success : function(res) {

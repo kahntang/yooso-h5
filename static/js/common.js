@@ -1,6 +1,6 @@
 // var StaticUrl="http://safety.kahntang.com/"
 var StaticUrl = "";
-var APIUrl = "http://safety.kahntang.com";
+var APIUrl = "http://safety.tunnel.kahntang.cc";
 var userToken = localStorage.getItem("token");
 var _miyao = "31e7d8d00616d9eeb2adcbb60c7ab708";
 module.exports.commonConfig = { StaticUrl, APIUrl };
@@ -246,7 +246,7 @@ $("#back_getVerCode").bind("click", function() {
     $.ajax({
       type: "post",
       url:
-        "http://safety.kahntang.com/sms/sendCode?appId=10001&mobile=" +
+        commonConfig.APIUrl+"/sms/sendCode?appId=10001&mobile=" +
         _telPhone +
         "&stime=" +
         _stime +
@@ -326,7 +326,7 @@ function saveBack() {
   );
   // $.ajax({
   //     type : "post",
-  //     url : "http://safety.kahntang.com/sms/checkCode?appId=10001&code="+_code+"&mobile="+_telPhone+"&stime="+_stime+"&sign="+_sign,
+  //     url : commonConfig.APIUrl+"/sms/checkCode?appId=10001&code="+_code+"&mobile="+_telPhone+"&stime="+_stime+"&sign="+_sign,
   //     data : {},
   //     dataType : "json",
   //     success : function(res) {
@@ -339,7 +339,7 @@ function saveBack() {
   // })
   $.ajax({
     type: "post",
-    url: "http://safety.kahntang.com/user/forget",
+    url: commonConfig.APIUrl+"/user/forget",
     data: {
       mobile: $("#back_username").val(),
       password: md5(
@@ -389,7 +389,7 @@ function checkForm() {
   $("#loading").show();
   $.ajax({
     type: "post",
-    url: "http://safety.kahntang.com/user/login",
+    url: commonConfig.APIUrl+"/user/login",
     data: {
       userName: account,
       password: md5(password)
@@ -440,7 +440,7 @@ function outEdit() {
   $("#loading").show();
   $.ajax({
     type: "post",
-    url: "http://safety.kahntang.com/user/logout?token=" + userToken,
+    url: commonConfig.APIUrl+"/user/logout?token=" + userToken,
     dataType: "text",
     async: false,
     success: function(data) {
@@ -519,7 +519,7 @@ $("#subFankuiBtn").click(function() {
   $.ajax({
     type: "post",
     url:
-      "http://safety.kahntang.com/user/feedback?token=" +
+      commonConfig.APIUrl+"/user/feedback?token=" +
       localStorage.getItem("token") +
       "&name=" +
       localStorage.getItem("userName") +

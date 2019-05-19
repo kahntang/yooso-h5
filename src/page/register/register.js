@@ -1,6 +1,8 @@
 // //js只有两行代码，在body中加一句话
 require('./../../../static/css/style.css')
 require('./register.less')
+var commonConfig=require('./../../../static/js/common.js').commonConfig
+var StaticUrl=commonConfig.StaticUrl
 var _miyao='31e7d8d00616d9eeb2adcbb60c7ab708'
 //弹出层方法
 function alertFunction(msg){
@@ -74,7 +76,7 @@ $("#getVerCode").bind("click", function() {
     var _sign=md5('appId=10001&mobile='+_telPhone+'&stime='+_stime+_miyao)
     $.ajax({
       type : "post",
-      url : "http://safety.kahntang.com/sms/sendCode?appId=10001&mobile="+_telPhone+"&stime="+_stime+"&sign="+_sign,
+      url : commonConfig.APIUrl+"/sms/sendCode?appId=10001&mobile="+_telPhone+"&stime="+_stime+"&sign="+_sign,
       data : {},
       dataType : "json",
       success : function(res) {
@@ -259,7 +261,7 @@ function saveReg() {
       var _sign=md5('appId=10001&code='+_code+'&mobile='+_telPhone+'&stime='+_stime+_miyao)
       // $.ajax({
       //   type : "post",
-      //   url : "http://safety.kahntang.com/sms/checkCode?appId=10001&code="+_code+"&mobile="+_telPhone+"&stime="+_stime+"&sign="+_sign,
+      //   url : commonConfig.APIUrl+"/sms/checkCode?appId=10001&code="+_code+"&mobile="+_telPhone+"&stime="+_stime+"&sign="+_sign,
       //   data : {},
       //   dataType : "json",
       //   success : function(res) {
@@ -274,7 +276,7 @@ function saveReg() {
       //提交注册信息
       $.ajax({
         type : "post",
-        url : "http://safety.kahntang.com/user/register",
+        url : commonConfig.APIUrl+"/user/register",
         data : {
           "userName" : $("#usernameReg").val().trim(),
           "password" : md5($("#password1Reg").val().trim()),
@@ -309,7 +311,7 @@ function saveReg() {
 function checkForms(account, password) {
   $.ajax({
     type : "post",
-    url : "http://safety.kahntang.com/user/login",
+    url : commonConfig.APIUrl+"/user/login",
     data : {
       "userName" : account,
       "password" : md5(password)

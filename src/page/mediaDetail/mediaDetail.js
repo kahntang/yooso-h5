@@ -28,7 +28,7 @@ function getDetail(){
   $("#loading").show()
   $.ajax({
     type : "post",
-    url : "http://safety.kahntang.com/info/getRepoDetail?repoId="+repoId+"&token="+token,
+    url : commonConfig.APIUrl+"/info/getRepoDetail?repoId="+repoId+"&token="+token,
     data : {},
     dataType : "json",
     success : function(res) {

@@ -4,7 +4,8 @@ require("./fileClassify.less");
 require("./../../../static/js/common.js");
 // var StaticUrl="http://safety.yooso.com.cn/resources/"
 // var StaticUrl="http://safety.kahntang.com"
-var StaticUrl = "";
+var commonConfig=require('./../../../static/js/common.js').commonConfig
+var StaticUrl=commonConfig.StaticUrl
 //获取url Id 进行数据请求
 var menuId = getQueryVariable("menuId");
 var menuLiId = getQueryVariable("menuLiId");
@@ -40,7 +41,7 @@ function getData(page) {
   $.ajax({
     type: "post",
     url:
-      "http://safety.kahntang.com/info/getRepo?menuId=" +
+      commonConfig.APIUrl+"/info/getRepo?menuId=" +
       menuId +
       "&pageSize=10&pageNo=" +
       page,
@@ -272,7 +273,7 @@ function getSearchData(page) {
   $.ajax({
     type: "post",
     url:
-      "http://safety.kahntang.com/search/adv?menuId=" +
+      commonConfig.APIUrl+"/search/adv?menuId=" +
       getQueryVariable("menuId") +
       "&pageSize=10&pageNo=" +
       page +

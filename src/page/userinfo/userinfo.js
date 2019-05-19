@@ -7,6 +7,8 @@ var localphoneNumber=localStorage.getItem('phoneNumber')
 var verCode;	//验证码
 var countdown = 60;	//发送验证码倒计时
 var InforResult='' //用户个人信息
+var commonConfig=require('./../../../static/js/common.js').commonConfig
+var StaticUrl=commonConfig.StaticUrl
 //弹出层方法
 function alertFunction(msg){
   $("body #aleertText").html(msg)
@@ -74,7 +76,7 @@ function getVerCode(){
   var _sign=md5('appId=10001&mobile='+telPhonese+'&stime='+_stime+_miyao)
   $.ajax({
     type : "post",
-    url : "http://safety.kahntang.com/sms/sendCode?appId=10001&mobile="+telPhonese+"&stime="+_stime+"&sign="+_sign,
+    url : commonConfig.APIUrl+"/sms/sendCode?appId=10001&mobile="+telPhonese+"&stime="+_stime+"&sign="+_sign,
     data : {
       
     },
@@ -305,7 +307,7 @@ function checkForms() {
   $("#loading").show()
   $.ajax({
     type : "post",
-    url : "http://safety.kahntang.com/user/modifyUserInfo",
+    url : commonConfig.APIUrl+"/user/modifyUserInfo",
     data : {
       // "id" : $("#userId").val(),
       "userName":accountName,
@@ -344,7 +346,7 @@ function initRightList(curr) {
   var pageSize = 10;
   $.ajax({
         type : "get",
-        url : "http://safety.kahntang.com/user/getUserInfo?token="+token,
+        url : commonConfig.APIUrl+"/user/getUserInfo?token="+token,
         // data : {
         //   "username" : 'jinhuizhen',
         //   "pageNum" : curr,
