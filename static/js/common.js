@@ -246,7 +246,7 @@ $("#back_getVerCode").bind("click", function() {
     $.ajax({
       type: "post",
       url:
-        commonConfig.APIUrl+"/sms/sendCode?appId=10001&mobile=" +
+        APIUrl+"/sms/sendCode?appId=10001&mobile=" +
         _telPhone +
         "&stime=" +
         _stime +
@@ -326,7 +326,7 @@ function saveBack() {
   );
   // $.ajax({
   //     type : "post",
-  //     url : commonConfig.APIUrl+"/sms/checkCode?appId=10001&code="+_code+"&mobile="+_telPhone+"&stime="+_stime+"&sign="+_sign,
+  //     url : APIUrl+"/sms/checkCode?appId=10001&code="+_code+"&mobile="+_telPhone+"&stime="+_stime+"&sign="+_sign,
   //     data : {},
   //     dataType : "json",
   //     success : function(res) {
@@ -339,7 +339,7 @@ function saveBack() {
   // })
   $.ajax({
     type: "post",
-    url: commonConfig.APIUrl+"/user/forget",
+    url: APIUrl+"/user/forget",
     data: {
       mobile: $("#back_username").val(),
       password: md5(
@@ -389,7 +389,7 @@ function checkForm() {
   $("#loading").show();
   $.ajax({
     type: "post",
-    url: commonConfig.APIUrl+"/user/login",
+    url: APIUrl+"/user/login",
     data: {
       userName: account,
       password: md5(password)
@@ -440,7 +440,7 @@ function outEdit() {
   $("#loading").show();
   $.ajax({
     type: "post",
-    url: commonConfig.APIUrl+"/user/logout?token=" + userToken,
+    url: APIUrl+"/user/logout?token=" + userToken,
     dataType: "text",
     async: false,
     success: function(data) {
@@ -519,7 +519,7 @@ $("#subFankuiBtn").click(function() {
   $.ajax({
     type: "post",
     url:
-      commonConfig.APIUrl+"/user/feedback?token=" +
+      APIUrl+"/user/feedback?token=" +
       localStorage.getItem("token") +
       "&name=" +
       localStorage.getItem("userName") +
