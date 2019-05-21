@@ -1,6 +1,6 @@
 // var StaticUrl="http://safety.kahntang.com/"
 var StaticUrl = "";
-var APIUrl = "http://safety.tunnel.kahntang.cc";
+var APIUrl = "";
 var userToken = localStorage.getItem("token");
 var _miyao = "31e7d8d00616d9eeb2adcbb60c7ab708";
 module.exports.commonConfig = { StaticUrl, APIUrl };
