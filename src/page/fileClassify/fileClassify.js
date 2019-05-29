@@ -3,9 +3,9 @@ require("./../../../static/css/style.css");
 require("./fileClassify.less");
 require("./../../../static/js/common.js");
 // var StaticUrl="http://safety.yooso.com.cn/resources/"
-// var StaticUrl="http://safety.kahntang.com"
-var commonConfig=require('./../../../static/js/common.js').commonConfig
-var StaticUrl=commonConfig.StaticUrl
+// var StaticUrl=commonConfig.APIUrl+""
+
+var StaticUrl = "";
 //获取url Id 进行数据请求
 var menuId = getQueryVariable("menuId");
 var menuLiId = getQueryVariable("menuLiId");

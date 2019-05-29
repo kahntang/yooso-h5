@@ -1,6 +1,11 @@
 // var StaticUrl="http://safety.kahntang.com/"
 var StaticUrl = "";
-var APIUrl = "";
+var APIUrl = localStorage.getItem("domain");
+//var APIUrl = "http://safety.tunnel.kahntang.cc/";
+if(!APIUrl){
+    APIUrl=""
+}
+
 var userToken = localStorage.getItem("token");
 var _miyao = "31e7d8d00616d9eeb2adcbb60c7ab708";
 module.exports.commonConfig = { StaticUrl, APIUrl };
@@ -326,7 +331,7 @@ function saveBack() {
   );
   // $.ajax({
   //     type : "post",
-  //     url : APIUrl+"/sms/checkCode?appId=10001&code="+_code+"&mobile="+_telPhone+"&stime="+_stime+"&sign="+_sign,
+  //     url : commonConfig.APIUrl+"/sms/checkCode?appId=10001&code="+_code+"&mobile="+_telPhone+"&stime="+_stime+"&sign="+_sign,
   //     data : {},
   //     dataType : "json",
   //     success : function(res) {

@@ -1,9 +1,8 @@
 // //js只有两行代码，在body中加一句话
 require('./../../../static/css/style.css')
 require('./classiSearch.less')
-require('./../../../static/js/common.js')
 var commonConfig=require('./../../../static/js/common.js').commonConfig
-var StaticUrl=commonConfig.StaticUrl
+
 //弹出层方法
 function alertFunction(msg) {
     $("body #aleertText").html(msg)

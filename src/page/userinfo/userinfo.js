@@ -1,14 +1,13 @@
 // //js只有两行代码，在body中加一句话
 require('./../../../static/css/style.css')
 require('./userinfo.less')
+
 var token=localStorage.getItem('token');
 var accountName=localStorage.getItem('userName')
 var localphoneNumber=localStorage.getItem('phoneNumber')
 var verCode;	//验证码
 var countdown = 60;	//发送验证码倒计时
 var InforResult='' //用户个人信息
-var commonConfig=require('./../../../static/js/common.js').commonConfig
-var StaticUrl=commonConfig.StaticUrl
 //弹出层方法
 function alertFunction(msg){
   $("body #aleertText").html(msg)
