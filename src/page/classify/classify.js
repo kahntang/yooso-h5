@@ -13,6 +13,7 @@ function alertFunction(msg){
 }
 //获取url Id 进行数据请求
 var menuId=getQueryVariable('menuId');
+var menuName=getQueryVariable('menuName');
 var menuLiId=getQueryVariable('menuLiId');
 var _labelId=localStorage.getItem('canvasKey')
 function getQueryVariable(variable){
@@ -36,7 +37,10 @@ function getData(page){
   if(!page){
     page=1
   }
-  $("#loading").show()
+
+    console.log("getData",menuId)
+
+    $("#loading").show()
   $("#searchText").val('')
   $.ajax({
     type : "post",
@@ -71,39 +75,46 @@ function getData(page){
                             '>'+contentResult[j].title+'</a></h1><div class="classify_p">'+contentText+'</div></div>'
         }
         //已经请求过了，那么左边数据不再更新，只更新右边数据
-        $('title').html(res.data.values[0].menu.menuName)
-        // if(!isLoadLeftMenu){
-        //     if(res.data.values.length==0){
-        //         $(".ToolUse_Left_Tab").hide()
-        //         return
-        //     }
-        //     var result=res.data.values[0].menu.childs //左侧菜单
-        //     for (var i = 0; i < result.length; i++) {
-        //     if (result[i].dictItemId == null || result[i].dictItemId == 0) {
-        //             var ul_MenusHtml=''
-        //             for(var ulJ=0;ulJ<result[i].childs.length;ulJ++){
-        //                 ul_MenusHtml+='<li><a class="erjimenuli" menuid='+result[i].childs[ulJ].id+' title='+result[i].childs[ulJ].menuName+' id='+result[i].childs[ulJ].id+'>'+result[i].childs[ulJ].menuName+'</a></li>'
-        //             }
-        //             LeftMenuHtml+='<li class="btn_showUl" id="menu'+result[i].id+'" menuid='+result[i].id+'>'+
-        //                         '<a class="u_title_btn" title='+result[i].menuName+' id='+result[i].id+'>'+result[i].menuName+'</a>'+
-        //                         '<ul id="ulList'+result[i].id+'" class="TabTwo" style="display:none;">'+ul_MenusHtml+'</ul></li>'
-        //         }
-        //     }
+        $('title').html(res.data.values.length>0?res.data.values[0].menu.menuName:'')
+        if(!isLoadLeftMenu){
+            if(res.data.values.length==0){
+                $(".ToolUse_Left_Tab").hide()
+                return
+            }
+            var result=res.data.values[0].menu.childs //左侧菜单
+            for (var i = 0; i < result.length; i++) {
+            if (result[i].dictItemId == null || result[i].dictItemId == 0) {
+                    var ul_MenusHtml=''
+                    for(var ulJ=0;ulJ<result[i].childs.length;ulJ++){
+                        var ulMenus2Html=''
+                        var data2 = result[i].childs[ulJ]
+                        for(var ulK=0;ulK<data2.childs.length && data2.childs.length>0;ulK++){
+                            ulMenus2Html+='<li><a class="erjimenuli" id='+data2.childs[ulK].id+' title='+data2.childs[ulK].menuName+' id='+data2.childs[ulK].id+'>'+data2.childs[ulK].menuName+'</a></li>'
+                        }
+                        ul_MenusHtml+='<li class="btn_showUl2" id="menu'+data2.id+'" menuname='+data2.menuName+' menuid='+data2.id+'>' +
+                            '<a class="u_title_btn"  title='+data2.menuName+' id='+data2.id+'>'+data2.menuName+'</a>' +
+                            '<ul id="ulList'+data2.id+'" class="TabTwo" style="display:none;">'+ulMenus2Html+'</ul></li>'
+                    }
+                    LeftMenuHtml+='<li class="btn_showUl" id="menu'+result[i].id+'" menuname='+result[i].menuName+' menuid='+result[i].id+'>'+
+                                '<a class="u_title_btn" title='+result[i].menuName+' id='+result[i].id+'>'+result[i].menuName+'</a>'+
+                                '<ul id="ulList'+result[i].id+'" class="TabTwo" style="display:none;">'+ul_MenusHtml+'</ul></li>'
+                }
+            }
             
-        //     // $("#leftMenuUl").html('');
-        //     // $("#leftMenuUl").append(LeftMenuHtml);
-        //     if(menuLiId){
-        //         //判断长度是否有
-        //         var ullilength= $("#menu"+menuLiId+"").find('.TabTwo').find('li').length;
-        //         if(ullilength>0){
-        //             $("#menu"+menuLiId+"").find('.TabTwo').show()
-        //         }
-        //         $("#menu"+menuLiId+"").find('.u_title_btn').addClass('cur')
-        //     }
-        //     isLoadLeftMenu=true
-        // }
+            $("#leftMenuUl").html('');
+            $("#leftMenuUl").append(LeftMenuHtml);
+            if(menuLiId){
+                //判断长度是否有
+                var ullilength= $("#menu"+menuLiId+"").find('.TabTwo').find('li').length;
+                if(ullilength>0){
+                    $("#menu"+menuLiId+"").find('.TabTwo').show()
+                }
+                $("#menu"+menuLiId+"").find('.u_title_btn').addClass('cur')
+            }
+            isLoadLeftMenu=true
+        }
         if(res.data.values.length>0){
-            $(".ToolUse_Title").html(res.data.values[0].menu.menuName+"（"+res.data.totalElements+"）条")
+            $(".ToolUse_Title").html((menuName?menuName:res.data.values[0].menu.menuName)+"（"+res.data.totalElements+"）条")
         }else{
             $(".ToolUse_Title").html($('title').html()+'（0）条')
         }
@@ -150,7 +161,7 @@ function getData(page){
     }
   });
 }
-getHotData()
+//getHotData()
 //请求热点数据
 function getHotData(){
     $.ajax({
@@ -223,7 +234,9 @@ $(document).scroll(function() {
     }
 });
 //点击展开二级菜单
-$("#leftMenuUl").on("click",".btn_showUl",function(){
+$("#leftMenuUl").on("click",".btn_showUl",function(e){
+    var e=e||window.event;
+    e.stopPropagation();
     $("#leftMenuUl").find('.TabTwo').hide()
     //判断长度是否有
     var ullilength=$(this).find('ul').find('li').length;
@@ -234,6 +247,27 @@ $("#leftMenuUl").on("click",".btn_showUl",function(){
     }
     //顺便进行数据请求
     menuId=$(this).attr('menuid')
+    menuName = $(this).attr('menuname')
+    console.log("111111",menuId+menuName)
+    getData(1)
+})
+
+//点击展开三级菜单
+$("#leftMenuUl").on("click",".btn_showUl2",function(e){
+    var e=e||window.event;
+    e.stopPropagation();
+    $("#leftMenuUl").find('.TabThree').hide()
+    //判断长度是否有
+    var ullilength=$(this).find('ul').find('li').length;
+    $("#leftMenuUl").find('.cur').removeClass('cur')
+    $(this).addClass('cur')
+    if(ullilength>0){
+        $(this).find('ul').show()
+    }
+    //顺便进行数据请求
+    menuId=$(this).attr('menuid')
+    menuName = $(this).attr('menuname')
+    console.log("2222",menuId+menuName)
     getData(1)
 })
 //点击二级菜单搜索

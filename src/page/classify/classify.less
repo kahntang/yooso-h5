@@ -1088,6 +1088,7 @@
 
 .ToolUse_Left_Tab>ul.TabOne>li {
 	margin: 0 20px;
+	text-align: left;
 	padding-left: 10px;
 	line-height: 11px;
 	border-bottom: 1px solid #dedede;
@@ -1129,7 +1130,10 @@
 .ToolUse_Left_Tab>ul.TabOne>li>ul.TabTwo {
 	display: none;
 	width: 111%;
-	height: 150px;
+	padding-left: 10px;
+	height: 250px;
+	margin-bottom: 5px;
+	padding-bottom: 5px;
 	overflow-y: scroll;
 	overflow-x: hidden;
 }
@@ -1170,7 +1174,7 @@
 
 .ToolUse_Left_Tab>ul.TabOne>li>ul.TabTwo>li {
 	height: 35px;
-	line-height: 35px;
+	line-height: 25px;
 	width: 197px;
 	margin-left: -10px;
 }
@@ -1203,14 +1207,14 @@
 }
 
 .ToolUse_Left_Tab>ul.TabOne>li>ul.TabTwo>li>ul.TabThree {
-	position: absolute;
-	left: 207px;
-	top: 0;
-	z-index: 888;
-	background: #f96c3e;
-	width: 164px;
-	padding: 10px 0 10px 25px;
 	display: none;
+	width: 100%;
+	padding-left: 10px;
+	height: 200px;
+	margin-bottom: 5px;
+	padding-bottom: 5px;
+	overflow-y: scroll;
+	overflow-x: hidden;
 }
 
 .ToolUse_Left_Tab>ul.TabOne>li>ul.TabTwo>li>ul.TabThree>li {
@@ -1453,7 +1457,12 @@
 	width: 90px;
 	// background: url(../images/more-btn.png) no-repeat right center;
 }
-
+.btn_showUI{
+	pointer-events: none;
+}
+.btn_showUI2{
+	pointer-events: auto;
+}
 .Standardize_wrap .ToolUse_Right_List.cur {
 	background: #f9843e;
 	border-bottom: 0 none;
