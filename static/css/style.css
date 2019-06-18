@@ -892,7 +892,7 @@ li {
     line-height: 41px;
     padding-left: 10px;
     padding-right: 15px;
-    background: url(http://safety.yooso.com.cn/resources/images/select_arrow.png) no-repeat 114px 17px;
+    background: url(http://safety.yooso.com.cn/images/select_arrow.png) no-repeat 114px 17px;
 }
 
 .search_line {
@@ -1204,7 +1204,7 @@ li {
 .skin_Feedback .icon {
     display: inline-block;
     vertical-align: middle;
-    background-image: url(http://safety.yooso.com.cn/resources/images/icon_all.png);
+    background-image: url(../img/icon_all.png);
     background-repeat: no-repeat;
 }
 
