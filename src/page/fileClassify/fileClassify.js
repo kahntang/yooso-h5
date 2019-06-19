@@ -1,10 +1,7 @@
 // //js只有两行代码，在body中加一句话
 require("./../../../static/css/style.css");
 require("./fileClassify.less");
-require("./../../../static/js/common.js");
-// var StaticUrl="http://safety.yooso.com.cn/resources/"
-// var StaticUrl=commonConfig.APIUrl+""
-
+var commonConfig=require('./../../../static/js/common.js').commonConfig
 var StaticUrl = "";
 //获取url Id 进行数据请求
 var menuId = getQueryVariable("menuId");
