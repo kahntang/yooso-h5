@@ -1,11 +1,8 @@
 // //js只有两行代码，在body中加一句话
 require("./../../../static/css/style.css");
 require("./fileClassify.less");
-require("./../../../static/js/common.js");
-// var StaticUrl="http://safety.yooso.com.cn/resources/"
-// var StaticUrl="http://safety.kahntang.com"
 var commonConfig=require('./../../../static/js/common.js').commonConfig
-var StaticUrl=commonConfig.StaticUrl
+var StaticUrl = "";
 //获取url Id 进行数据请求
 var menuId = getQueryVariable("menuId");
 var menuLiId = getQueryVariable("menuLiId");
@@ -169,8 +166,8 @@ function getData(page) {
           groups: groups, // 连续显示分页数
           first: "首页", // 若不显示，设置false即可
           last: "尾页", // 若不显示，设置false即可
-          prev: " ", // 若不显示，设置false即可
-          next: " ", // 若不显示，设置false即可
+            prev : '上一页', // 若不显示，设置false即可
+            next : '下一页 ', // 若不显示，设置false即可
           jump: function(obj, first) {
             // 触发分页后的回调
             if (!first) {
@@ -341,8 +338,8 @@ function getSearchData(page) {
           groups: groups, // 连续显示分页数
           first: "首页", // 若不显示，设置false即可
           last: "尾页", // 若不显示，设置false即可
-          prev: " ", // 若不显示，设置false即可
-          next: " ", // 若不显示，设置false即可
+            prev : '上一页', // 若不显示，设置false即可
+            next : '下一页 ', // 若不显示，设置false即可
           jump: function(obj, first) {
             // 触发分页后的回调
             if (!first) {

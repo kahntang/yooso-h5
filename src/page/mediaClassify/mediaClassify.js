@@ -49,7 +49,7 @@ function getData(page){
         for (var j = 0; j < contentResult.length; j++) {
             RightContentHtml+='<div class="ToolUse_Right_ImgList">'+
                               '<a class="img"><img src="'+StaticUrl+contentResult[j].url+'"></a>'+
-                              '<a target="_blank" href="/mediaDetail.html?id='+contentResult[j].id+'" class="playBtn"><img src="http://safety.yooso.com.cn/resources/images/playBtn.png"></a>'
+                              '<a target="_blank" href="/mediaDetail.html?id='+contentResult[j].id+'" class="playBtn"><img src="/images/playBtn.png"></a>'
                               +'<div><a target="_blank" href="/mediaDetail.html?id='+contentResult[j].id+'" class="title">'+contentResult[j].title+'</a></div></div>'
         }
         //已经请求过了，那么左边数据不再更新，只更新右边数据
@@ -113,8 +113,8 @@ function getData(page){
             groups : groups, // 连续显示分页数
             first : '首页', // 若不显示，设置false即可
             last : '尾页', // 若不显示，设置false即可
-            prev : ' ', // 若不显示，设置false即可
-            next : ' ', // 若不显示，设置false即可
+            prev : '上一页', // 若不显示，设置false即可
+            next : '下一页 ', // 若不显示，设置false即可
             jump : function(obj, first) { // 触发分页后的回调
                 if (!first) { // 点击跳页触发函数自身，并传递当前页：obj.curr
                     curr=obj.curr;
@@ -267,7 +267,7 @@ function getSearchData(page){
             for (var j = 0; j < contentResult.length; j++) {
                 RightContentHtml+='<div class="ToolUse_Right_ImgList">'+
                                   '<a class="img"><img src="'+StaticUrl+contentResult[j].url+'"></a>'+
-                                  '<a target="_blank" href="/mediaDetail.html?id='+contentResult[j].id+'" class="playBtn"><img src="http://safety.yooso.com.cn/resources/images/playBtn.png"></a>'
+                                  '<a target="_blank" href="/mediaDetail.html?id='+contentResult[j].id+'" class="playBtn"><img src="/images/playBtn.png"></a>'
                                   +'<div><a target="_blank" href="/multimedia/toMultimediaDetail?id='+contentResult[j].id+'" class="title">'+contentResult[j].title+'</a></div></div>'
             }
             //右侧内容拼接
@@ -303,8 +303,8 @@ function getSearchData(page){
                 groups : groups, // 连续显示分页数
                 first : '首页', // 若不显示，设置false即可
                 last : '尾页', // 若不显示，设置false即可
-                prev : ' ', // 若不显示，设置false即可
-                next : ' ', // 若不显示，设置false即可
+                prev : '上一页', // 若不显示，设置false即可
+                next : '下一页 ', // 若不显示，设置false即可
                 jump : function(obj, first) { // 触发分页后的回调
                     if (!first) { // 点击跳页触发函数自身，并传递当前页：obj.curr
                         curr=obj.curr;

@@ -3,8 +3,9 @@ require("./../../../static/css/style.css");
 require("./detail.less");
 // var StaticUrl="http://safety.yooso.com.cn/resources/"
 // var StaticUrl="http://safety.kahntang.com/"
+var StaticUrl = "";
 var commonConfig=require('./../../../static/js/common.js').commonConfig
-var StaticUrl=commonConfig.StaticUrl
+
 //弹出层方法
 function alertFunction(msg) {
   $("body #aleertText").html(msg);

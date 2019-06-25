@@ -2,8 +2,8 @@
 require('./../../../static/css/style.css')
 require('./allClassify.less')
 require('./../../../static/js/common.js')
-var commonConfig=require('./../../../static/js/common.js').commonConfig
-var StaticUrl=commonConfig.StaticUrl
+
+
 //弹出层方法
 function alertFunction(msg){
   $("body #aleertText").html(msg)

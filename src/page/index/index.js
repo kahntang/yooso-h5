@@ -103,6 +103,7 @@ $.ajax({
   }
 });
 function getMenuList(labelId){
+  console.log("getMenuList:"+labelId)
   $("#loading").show()
   var _url=commonConfig.APIUrl+"/info/v2/getMenu"
   if(labelId){
