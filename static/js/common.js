@@ -3,7 +3,7 @@ var StaticUrl=""
 // console.log("domain:"+domain);
 // window.localStorage.setItem("domain",domain);
 // var StaticUrl = localStorage.getItem("domain");
-var APIUrl = "";
+var APIUrl = "http://localhost:8084";
 if(!APIUrl){
     APIUrl=""
 }
