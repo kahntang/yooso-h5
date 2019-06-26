@@ -48,11 +48,22 @@ $('#iconRight').click(function(){
   getMenuList(_typId)
   mySwiper.slideNext();
 })
+var userToken = localStorage.getItem("token")
+//判断是否有登录状态
+if (!userToken) {
+    $("#LoginUl").html("");
+    $("#loginBtns").show();
+    alertFunction("请先登录");
+    $(".overlay").show();
+} else {
+    $("#loginBtns").hide();
+    $("#loginuserName").html(localStorage.getItem("userName"));
+}
 //请求分类信息 拼接赋值
 $.ajax({
   type : "post",
   url : commonConfig.APIUrl+"/info/v2/getMenu",
-  data : {},
+  data : {token:userToken},
   dataType : "json",
   success : function(res) {
     if (res.code == "200") {

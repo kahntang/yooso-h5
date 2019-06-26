@@ -3,7 +3,7 @@ var StaticUrl=""
 // console.log("domain:"+domain);
 // window.localStorage.setItem("domain",domain);
 // var StaticUrl = localStorage.getItem("domain");
-var APIUrl = "http://localhost:8084";
+var APIUrl = "";
 if(!APIUrl){
     APIUrl=""
 }
@@ -14,6 +14,7 @@ console.log("APIUrl:"+APIUrl);
 var userToken = localStorage.getItem("token");
 var _miyao = "31e7d8d00616d9eeb2adcbb60c7ab708";
 module.exports.commonConfig = { StaticUrl, APIUrl };
+console.log("token:========"+userToken)
 //判断是否有登录状态
 if (!userToken) {
   $("#LoginUl").html("");

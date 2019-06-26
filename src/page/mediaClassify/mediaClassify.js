@@ -24,6 +24,19 @@ function getQueryVariable(variable){
   }
   return(false);
 }
+
+var userToken = localStorage.getItem("token")
+//判断是否有登录状态
+if (!userToken) {
+    $("#LoginUl").html("");
+    $("#loginBtns").show();
+    alertFunction("请先登录");
+    $(".overlay").show();
+} else {
+    $("#loginBtns").hide();
+    $("#loginuserName").html(localStorage.getItem("userName"));
+}
+
 getData(1)
 var curr=1,page=1;
 var isLoadLeftMenu=false
@@ -36,7 +49,7 @@ function getData(page){
   $.ajax({
     type : "post",
     url : commonConfig.APIUrl+"/info/v2/getRepo?menuId="+menuId+"&pageSize=10&pageNo="+page+"&labelId="+_labelId,
-    data : {},
+    data : {token: userToken},
     dataType : "json",
     success : function(res) {
         $("#loading").hide()
