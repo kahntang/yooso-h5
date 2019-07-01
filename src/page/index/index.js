@@ -56,6 +56,13 @@ $.ajax({
   dataType : "json",
   success : function(res) {
     if (res.code == "200") {
+      var userToken = localStorage.getItem("token");
+      if(res.ext && !userToken){
+          localStorage.setItem('token',res.msg)
+          localStorage.setItem('userName',res.ext.userName)
+          localStorage.setItem('phoneNumber',res.ext.phoneNumber)//缓存手机号
+          window.location.href = "./index.html";
+      }
       //拼接
       var resultData=res.data
       classifyData=resultData

@@ -75,7 +75,7 @@ function getVerCode(){
   var _sign=md5('appId=10001&mobile='+telPhonese+'&stime='+_stime+_miyao)
   $.ajax({
     type : "post",
-    url : commonConfig.APIUrl+"/sms/sendCode?appId=10001&mobile="+telPhonese+"&stime="+_stime+"&sign="+_sign,
+    url : "/sms/sendCode?appId=10001&mobile="+telPhonese+"&stime="+_stime+"&sign="+_sign,
     data : {
       
     },
@@ -306,7 +306,7 @@ function checkForms() {
   $("#loading").show()
   $.ajax({
     type : "post",
-    url : commonConfig.APIUrl+"/user/modifyUserInfo",
+    url : "/user/modifyUserInfo",
     data : {
       // "id" : $("#userId").val(),
       "userName":accountName,
@@ -345,7 +345,7 @@ function initRightList(curr) {
   var pageSize = 10;
   $.ajax({
         type : "get",
-        url : commonConfig.APIUrl+"/user/getUserInfo?token="+token,
+        url : "/user/getUserInfo?token="+token,
         // data : {
         //   "username" : 'jinhuizhen',
         //   "pageNum" : curr,

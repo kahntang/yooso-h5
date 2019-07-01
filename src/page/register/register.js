@@ -75,7 +75,7 @@ $("#getVerCode").bind("click", function() {
     var _sign=md5('appId=10001&mobile='+_telPhone+'&stime='+_stime+_miyao)
     $.ajax({
       type : "post",
-      url : commonConfig.APIUrl+"/sms/sendCode?appId=10001&mobile="+_telPhone+"&stime="+_stime+"&sign="+_sign,
+      url : "/sms/sendCode?appId=10001&mobile="+_telPhone+"&stime="+_stime+"&sign="+_sign,
       data : {},
       dataType : "json",
       success : function(res) {
@@ -260,7 +260,7 @@ function saveReg() {
       var _sign=md5('appId=10001&code='+_code+'&mobile='+_telPhone+'&stime='+_stime+_miyao)
       // $.ajax({
       //   type : "post",
-      //   url : commonConfig.APIUrl+"/sms/checkCode?appId=10001&code="+_code+"&mobile="+_telPhone+"&stime="+_stime+"&sign="+_sign,
+      //   url : "/sms/checkCode?appId=10001&code="+_code+"&mobile="+_telPhone+"&stime="+_stime+"&sign="+_sign,
       //   data : {},
       //   dataType : "json",
       //   success : function(res) {
@@ -275,7 +275,7 @@ function saveReg() {
       //提交注册信息
       $.ajax({
         type : "post",
-        url : commonConfig.APIUrl+"/user/register",
+        url : "/user/register",
         data : {
           "userName" : $("#usernameReg").val().trim(),
           "password" : md5($("#password1Reg").val().trim()),
@@ -310,7 +310,7 @@ function saveReg() {
 function checkForms(account, password) {
   $.ajax({
     type : "post",
-    url : commonConfig.APIUrl+"/user/login",
+    url : "/user/login",
     data : {
       "userName" : account,
       "password" : md5(password)
